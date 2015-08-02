@@ -1,7 +1,53 @@
 package br.edu.ufabc.TakeARide.modelo;
 
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Pessoa {
-	String opcao, nome, cpf, telefone, celular, email, ra, logradouro, numero, complemento, cidade, estado, login, senha;
+	
+	private String opcao;
+	
+	@NotEmpty(message="Nome não pode ser vazio!")
+	private String nome;
+	
+	@NotEmpty(message="CPF não pode ser vazio!") 
+	private String cpf; 
+	
+	@NotEmpty(message="Telefone não pode ser vazio!") 
+	private String telefone; 
+	
+	@NotEmpty(message="Celular não pode ser vazio!") 
+	private String celular; 
+	
+	@NotEmpty(message="Email não pode ser vazio!") 
+	@Pattern(message="Email deve ter o formato: palavra@palavra.palavra",
+	regexp="^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
+	private String email; 
+	
+	@NotEmpty(message="RA não pode ser vazio!") 
+	private String ra; 
+	
+	@NotEmpty(message="Logradouro não pode ser vazio!") 
+	private String logradouro; 
+	
+	@NotEmpty(message="Número não pode ser vazio!") 
+	private String numero; 
+	
+	@NotEmpty(message="Complemento não pode ser vazio!") 
+	private String complemento;
+
+	@NotEmpty(message="Cidade não pode ser vazio!") 
+	private String cidade; 
+	
+	@NotEmpty(message="Estado não pode ser vazio!") 
+	private String estado; 
+	
+	@NotEmpty(message="Login não pode ser vazio!") 
+	private String login; 
+	
+	@NotEmpty(message="Senha não pode ser vazio!") 
+	private String senha;
 	int nivel;
 	
 	public int getNivel() {

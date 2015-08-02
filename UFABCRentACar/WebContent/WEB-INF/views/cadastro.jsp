@@ -4,8 +4,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>UFABC Rent a Car & Take a Ride - Cadastro</title>
-<link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css" > 
+<style>
+<style>
+body {
+	margin: 0px 0px 0px 0px;
+	border: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+a {
+	color: yellow;
+	font: bold;
+}
+
+form {
+	width: auto;
+	height: auto;
+}
+.registerForm {
+	float: left;
+	margin-left: 20%;
+	width: 600px;
+	clear: both;
+}
+
+.registerForm input {
+	width: 100%;
+	clear: both;
+}
+</style>
+</style>
 <script type="text/javascript">
 		function validaCampos() {
 			var nome = document.getElementById('nome').value;

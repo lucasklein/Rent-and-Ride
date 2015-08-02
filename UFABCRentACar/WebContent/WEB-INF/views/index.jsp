@@ -1,9 +1,32 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>UFABC Rent a Car & Take a Ride - Login</title>
-<link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css" > 
+<style>
+body {
+	margin: 0px 0px 0px 0px;
+	border: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+a {
+	color: yellow;
+	font: bold;
+}
+
+form {
+	width: auto;
+	height: auto;
+}
+
+#loginForm {
+	float: left;
+	margin-top: 80px;
+	margin-left: 45%;
+}
+</style>
 </head>
 
 <body>
