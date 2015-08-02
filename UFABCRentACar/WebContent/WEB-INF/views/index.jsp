@@ -55,7 +55,7 @@ form {
 		<form action="firstPage.jsp" method="post">
 			Usu&aacute;rio:<br/><input type="text" id="login" /><br/>
 			Senha:<br/><input type="password" id="senha" /><br/><br/>
-			<input type="submit" value=" Entrar " onclick="return validaCampos()" /> &emsp; <a href="cadastro.jsp">Cadastre-se Aqui!</a>  <br/>
+			<input type="submit" value=" Entrar " onclick="return validaCampos()" /> &emsp; <a href="novoCadastro">Cadastre-se Aqui!</a>  <br/>
 			
 		</form>
 	</div>
