@@ -33,7 +33,6 @@ form {
 	clear: both;
 }
 </style>
-</style>
 <script type="text/javascript">
 		function validaCampos() {
 			var nome = document.getElementById('nome').value;
@@ -160,7 +159,7 @@ form {
 	<jsp:include page="cabecalho.jsp" />
 
 	<div class="registerForm">
-		<form action="cadastrar" method="post" >
+		<form action="inserePessoa" method="post" >
 			
 			<h2>Dados Pessoais</h2>
 			<hr size="2px" color="gray" width="800px" align="left" />
@@ -187,6 +186,7 @@ form {
 			<input type="submit" value=" Cadastrar " onclick="return validaCampos()" id="envia"/> &emsp;
 			<input type="reset" value=" Limpar " onclick="return validaCampos()" id="limpa"/>
 			<input type="hidden" id="opcao" name="opcao" value="usuario" />
+			<a href="/UFABCRentACar/">Voltar</a>
 		</form><br/>
 	</div>
 	<jsp:include page="rodape.jsp" />

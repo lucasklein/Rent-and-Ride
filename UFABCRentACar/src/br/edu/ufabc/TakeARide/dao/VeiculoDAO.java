@@ -1,47 +1,44 @@
 package br.edu.ufabc.TakeARide.dao;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
+import javax.persistence.PersistenceContext;
+import org.springframework.stereotype.Repository;
 import br.edu.ufabc.TakeARide.modelo.Veiculo;
 
+@Repository
 public class VeiculoDAO {
 	
-	private EntityManagerFactory factory;
+	@PersistenceContext
 	private EntityManager manager;
-	
-	public VeiculoDAO(){
-		factory = Persistence.createEntityManagerFactory("TakeARide");
-		manager = factory.createEntityManager();
+
+	// insere um veiculo
+	public void insere(Veiculo veiculo) {
+		manager.persist(veiculo);
 	}
-	
-	public void insereCarona(Veiculo veiculo){
-				
-		try{
-			manager.getTransaction().begin();
-			manager.persist(veiculo);
-			manager.getTransaction().commit();
-		}finally{
-			if(manager.getTransaction().isActive()){
-				manager.getTransaction().rollback();
-			}
-		}
-		manager.close();
-		
+
+	// remove um Veiculo
+	public void remove(Veiculo veiculo) {
+		Veiculo veiculoRemover = manager.find(Veiculo.class, veiculo.getChassi());
+		manager.remove(veiculoRemover);
 	}
-	
-public List<Veiculo> listVeiculos(){
-		
-		
+
+	// altera dados de um veiculo
+	public void altera(Veiculo veiculo) {
+		manager.merge(veiculo);
+	}
+
+	// faz a busca de veiculo pelo ID
+	public Veiculo buscaPorId(String chassi) {
+		return manager.find(Veiculo.class, chassi);
+	}
+
+	// devolve uma lista com todos veiculos
+	public List<Veiculo> getLista() {
 		@SuppressWarnings("unchecked")
-		List<Veiculo> veiculos = manager.createQuery("select a from Veiculo a").getResultList();
-		manager.close();
-		
+		List<Veiculo> veiculos = manager.createQuery("select a from Veiculo a")
+				.getResultList();
 		return veiculos;
-		
 	}
 
 }

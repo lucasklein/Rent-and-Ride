@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,11 +17,10 @@ body {
 
 	<jsp:include page="cabecalho.jsp" />
 
-	<h3>Mensagem:</h3>
-	${requestScope.msg}
+	<h3>Usuário cadastrado com sucesso!</h3>
 	<br>
 	<br>
-	<a href="index.jsp">Voltar</a>
+	<a href="/UFABCRentACar/">Voltar</a>
 	
 	<div style="position: absolute; bottom: 0; margin: 0; width: 100%" >
 		<jsp:include page="rodape.jsp" />

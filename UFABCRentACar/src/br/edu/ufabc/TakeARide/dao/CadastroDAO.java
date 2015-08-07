@@ -43,7 +43,7 @@ public class CadastroDAO {
 			stmt.setString(3, pessoa.getTelefone());//tel
 			stmt.setString(4, pessoa.getCelular());//cel
 			stmt.setString(5, pessoa.getLogradouro());//logradouro
-			stmt.setInt(6, Integer.parseInt(pessoa.getNumero()));//num
+			stmt.setInt(6, pessoa.getNumero());//num
 			stmt.setString(7, pessoa.getComplemento());//complemento
 			stmt.setString(8, pessoa.getEmail());//email
 			//executa stmt na tabela pessoa
