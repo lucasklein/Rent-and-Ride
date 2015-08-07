@@ -34,14 +34,12 @@ public class Aluguel {
 	
 	private String observacao;
 	
-	private String alugacol;
-	
 	@ManyToOne
-	@JoinColumn(name = "cpf_cliente")
+	@JoinColumn(name = "cpf_cliente",nullable=false)
 	private Pessoa pessoa;
 	
 	@ManyToOne
-	@JoinColumn(name = "chassi_veiculo")
+	@JoinColumn(name = "chassi_veiculo",nullable=false)
 	private Veiculo veiculo;
 
 	public int getId() {
@@ -67,12 +65,6 @@ public class Aluguel {
 	}
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
-	}
-	public String getAlugacol() {
-		return alugacol;
-	}
-	public void setAlugacol(String alugacol) {
-		this.alugacol = alugacol;
 	}
 	public Pessoa getPessoa() {
 		return pessoa;

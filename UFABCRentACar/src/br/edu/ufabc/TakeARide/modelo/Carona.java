@@ -28,6 +28,10 @@ public class Carona {
 	@Column(nullable=false)
 	private int qtd_vagas;
 	
+	@NotEmpty(message="Partida não pode ser vazio!")
+	@Column(name="local_partida",nullable=false)
+	private String partida;
+	
 	@NotEmpty(message="Destino não pode ser vazio!")
 	@Column(nullable=false)
 	private String destino;
@@ -38,7 +42,7 @@ public class Carona {
 	private Date data_saida;
 	
 	@ManyToOne
-	@JoinColumn(name = "cpf_cliente")
+	@JoinColumn(name = "cpf_cliente",nullable=false)
 	private Pessoa pessoa;
 
 	public int getId() {
@@ -79,6 +83,14 @@ public class Carona {
 
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
+	}
+
+	public String getPartida() {
+		return partida;
+	}
+
+	public void setPartida(String partida) {
+		this.partida = partida;
 	}
 
 }

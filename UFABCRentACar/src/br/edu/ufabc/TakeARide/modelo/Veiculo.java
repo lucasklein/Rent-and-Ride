@@ -40,7 +40,7 @@ public class Veiculo {
 	private int status;
 	
 	@ManyToOne
-	@JoinColumn(name = "cpf_cliente")
+	@JoinColumn(name = "cpf_cliente",nullable=false)
 	private Pessoa pessoa;
 	
 	@OneToMany(targetEntity=Aluguel.class,mappedBy="veiculo")
