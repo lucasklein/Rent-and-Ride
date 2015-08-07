@@ -29,5 +29,10 @@ public class PessoaDAO {
 		manager.close();
 		
 	}
+	
+	public void removePessoa(Pessoa pessoa){
+		
+		//TODO
+	}
 
 }
