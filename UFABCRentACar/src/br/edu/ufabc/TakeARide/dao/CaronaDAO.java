@@ -6,22 +6,23 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import br.edu.ufabc.TakeARide.modelo.Pessoa;
+import br.edu.ufabc.TakeARide.modelo.Carona;
 
-public class PessoaDAO {
+public class CaronaDAO {
+	
 	private EntityManagerFactory factory;
 	private EntityManager manager;
 	
-	public PessoaDAO(){
-		factory = Persistence.createEntityManagerFactory("pessoas");
+	public CaronaDAO(){
+		factory = Persistence.createEntityManagerFactory("TakeARide");
 		manager = factory.createEntityManager();
 	}
 	
-	public void cadastraPessoa(Pessoa pessoa){
+	public void insereCarona(Carona carona){
 				
 		try{
 			manager.getTransaction().begin();
-			manager.persist(pessoa);
+			manager.persist(carona);
 			manager.getTransaction().commit();
 		}finally{
 			if(manager.getTransaction().isActive()){
@@ -32,19 +33,17 @@ public class PessoaDAO {
 		
 	}
 	
-	public List<Pessoa> listPessoas(){
+	public List<Carona> listCaronas(){
+		
 		
 		@SuppressWarnings("unchecked")
-		List<Pessoa> pessoas = manager.createQuery("select a from Pessoa a").getResultList();
+		List<Carona> caronas = manager.createQuery("select a from Carona a").getResultList();
 		manager.close();
 		
-		return pessoas;
+		return caronas;
 		
 	}
 	
-	public void removePessoa(Pessoa pessoa){
-		
-		//TODO
-	}
+
 
 }
