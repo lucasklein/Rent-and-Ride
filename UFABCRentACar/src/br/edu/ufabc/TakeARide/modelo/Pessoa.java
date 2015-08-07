@@ -1,9 +1,17 @@
 package br.edu.ufabc.TakeARide.modelo;
 
+import java.util.List;
+
 import javax.validation.constraints.Pattern;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
+@Table(name="pessoa")
 public class Pessoa {
 	
 	private String opcao;
@@ -11,6 +19,7 @@ public class Pessoa {
 	@NotEmpty(message="Nome não pode ser vazio!")
 	private String nome;
 	
+	@Id
 	@NotEmpty(message="CPF não pode ser vazio!") 
 	private String cpf; 
 	
@@ -25,7 +34,7 @@ public class Pessoa {
 	regexp="^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
 	private String email; 
 	
-	@NotEmpty(message="RA não pode ser vazio!") 
+	//@NotEmpty(message="RA não pode ser vazio!") 
 	private String ra; 
 	
 	@NotEmpty(message="Logradouro não pode ser vazio!") 
@@ -49,6 +58,15 @@ public class Pessoa {
 	@NotEmpty(message="Senha não pode ser vazio!") 
 	private String senha;
 	int nivel;
+	
+	@OneToMany(targetEntity=Veiculo.class,mappedBy="pessoa")
+	private List<Veiculo> veiculos;
+	
+	@OneToMany(targetEntity=Aluguel.class,mappedBy="pessoa")
+	private List<Aluguel> alugueis;
+	
+	@OneToMany(targetEntity=Carona.class,mappedBy="pessoa")
+	private List<Carona> carona;
 	
 	public int getNivel() {
 		return nivel;
@@ -112,6 +130,7 @@ public class Pessoa {
 
 	public void setRa(String ra) {
 		this.ra = ra;
+		System.out.println("Setei RA: " + this.ra);
 	}
 
 	public String getLogradouro() {
@@ -168,6 +187,13 @@ public class Pessoa {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public boolean validaSenha(String senha){
+		if(senha == getSenha())
+			return true;
+		else
+			return false;
 	}
 	
 	

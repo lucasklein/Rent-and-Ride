@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.edu.ufabc.TakeARide.dao.CadastroDAO;
 import br.edu.ufabc.TakeARide.modelo.Pessoa;
+import br.edu.ufabc.TakeARide.dao.PessoaDAO;
 
 
 @WebServlet("/cadastrar")
@@ -60,11 +61,16 @@ public class CadastraServlet extends HttpServlet {
 		pessoa.setSenha(senha); //TODO: Apply some security here;
 		pessoa.setNivel(1);
 		
+		System.out.println("RA: " + pessoa.getRa() + " - " + ra);
+		
 
 		
-		Connection conn = (Connection) req.getAttribute("conexao");
+		/*Connection conn = (Connection) req.getAttribute("conexao");
 		CadastroDAO dao = new CadastroDAO(conn);
-		dao.cadastraCliente(pessoa); // salva no BD
+		dao.cadastraCliente(pessoa); // salva no BD*/
+		
+		PessoaDAO dao = new PessoaDAO();
+		dao.cadastraPessoa(pessoa);
 
 		// escreve a pagina que sera enviada como resposta
 		req.setAttribute("msg", "Cadastro Realizado com sucesso!");
