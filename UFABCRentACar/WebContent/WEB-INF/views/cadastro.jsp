@@ -3,10 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<jsp:include page="bootstrap.jsp" />
-
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<style>
 <style>
 body {
 	margin: 0px 0px 0px 0px;
@@ -35,10 +33,6 @@ form {
 	clear: both;
 }
 </style>
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 <script type="text/javascript">
 		function validaCampos() {
 			var nome = document.getElementById('nome').value;
@@ -51,7 +45,6 @@ form {
 			var numero = document.getElementById('numero').value;
 			var cidade = document.getElementById('cidade').value;
 			var estado = document.getElementById('estado').value;
-			var login = document.getElementById('login').value;
 			var senha = document.getElementById('senha').value;
 			
 			//Verifica nome
@@ -109,12 +102,6 @@ form {
 				return false;
 			}
 			
-			//Verifica campo Login
-			if (login == "" || null) {
-				alert("O campo Usuário não pode ser vazio!");
-				return false;
-			} 
-			
 			//Verifica campo password
 			if(email == "" || null){
 				alert("O campo Senha não pode ser vazio!");
@@ -169,90 +156,29 @@ form {
 			
 			<h2>Dados Pessoais</h2>
 			<hr size="2px" color="gray" width="800px" align="left" />
-<<<<<<< HEAD
 			Nome: <input type="text" id="nome" name="nome"/><br /> 
 			CPF: <input type="text" id="cpf" name="cpf" onKeyUp="javascript:numbersOnly(this);" /><br />
 			Telefone:<input type="text" id="telefone" name="telefone"/><br />
 			Celular:<input type="text" id="celular" name="celular"/><br />
 			Email:<input type="text" id="email" name="email"/><br />
 			RA<input type="text" id="ra" name="ra"/><br />
-=======
-			
-				  <div class="form-group">
-				    <label for="nome">Nome:</label>
-				    <input type="text" class="form-control" id="nome" name="nome">
-				  </div>
-				  <div class="form-group">
-				    <label for="cpf">CPF:</label>
-				    <input type="text" class="form-control" id="cpf" name="cpf" onKeyUp="javascript:numbersOnly(this);">
-				  </div>
-				  <div class="form-group">
-				    <label for="telefone">Telefone:</label>
-				    <input type="text" class="form-control" id="telefone" name="telefone">
-				  </div>
-				  <div class="form-group">
-				    <label for="celular">Celular:</label>
-				    <input type="text" class="form-control" id="celular" name="celular">
-				  </div>
-				  <div class="form-group">
-				    <label for="email">Email:</label>
-				    <input type="text" class="form-control" id="email" name="email">
-				  </div>
-				  <div class="form-group">
-				    <label for="ra">RA:</label>
-				    <input type="text" class="form-control" id="ra" name="ra">
-				  </div>
->>>>>>> origin/master
 			
 			<h2>Dados de Moradia</h2>
 			<hr size="2px" color="gray" width="800px" align="left" />
-			
-				  <div class="form-group">
-				    <label for="logradouro">Logradouro:</label>
-				    <input type="text" class="form-control" id="logradouro" name="logradouro">
-				  </div>
-				  <div class="form-group">
-				    <label for="logradouro">Número:</label>
-				    <input type="text" class="form-control" id="numero" name="numero">
-				  </div>
-				  <div class="form-group">
-				    <label for="logradouro">Complemento:</label>
-				    <input type="text" class="form-control" id="complemento" name="complemento">
-				  </div>
-				  <div class="form-group">
-				    <label for="logradouro">Cidade:</label>
-				    <input type="text" class="form-control" id="cidade" name="cidade">
-				  </div>
-				  <div class="form-group">
-				    <label for="logradouro">Estado:</label>
-				    <input type="text" class="form-control" id="estado" name="estado">
-				  </div>
+			Logradouro:<input type="text" id="logradouro" name="logradouro" /><br />
+			Número:<input type="text" id="numero" name="numero" /><br />
+			Complemento:<input type="text" id="complemento" name="complemento"/><br />			
+			Cidade:<input type="text" id="cidade" name="cidade"/><br />
+			Estado:<input type="text" id="estado" name="estado"/><br />
 			
 			<h2>Dados de Acesso</h2>
 			<hr size="2px" color="gray" width="800px" align="left" />
-			
-				  <div class="form-group">
-				    <label for="login">Usuário:</label>
-				    <input type="text" class="form-control" id="login" name="login">
-				  </div>
-				  <div class="form-group">
-				    <label for="senha">Senha:</label>
-				    <input type="password" class="form-control" id="senha" name="senha">
-				  </div>
-
+			Senha:<input type="password" id="senha" name="senha"/><br />
 			<br /> 
-<<<<<<< HEAD
-			
-			<button type="submit" class="btn btn-primary" onclick="return validaCampos()" id="envia">Cadastrar</button>
-			<button type="reset" class="btn btn-danger" onclick="return validaCampos()" id="limpa">Limpar</button>
-			
-		<input type="hidden" id="opcao" name="opcao" value="usuario" />
-=======
 			<input type="submit" value=" Cadastrar " onclick="return validaCampos()" id="envia"/> &emsp;
 			<input type="reset" value=" Limpar " onclick="return validaCampos()" id="limpa"/>
 			<input type="hidden" id="opcao" name="opcao" value="usuario" />
 			<a href="/UFABCRentACar/">Voltar</a>
->>>>>>> origin/master
 		</form><br/>
 	</div>
 	<jsp:include page="rodape.jsp" />

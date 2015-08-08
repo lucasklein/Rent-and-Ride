@@ -19,6 +19,8 @@ public class MainController {
 	private VeiculoDAO veiculoDAO;
 	private AluguelDAO aluguelDAO;
 	
+	private Pessoa pessoaSessao;
+	
 	@Autowired
 	public MainController(PessoaDAO pessoaDAO, CaronaDAO caronaDAO, VeiculoDAO veiculoDAO, AluguelDAO aluguelDAO) {
 		this.pessoaDAO = pessoaDAO;
@@ -30,6 +32,12 @@ public class MainController {
 	@RequestMapping("/")
 	public String start(Model model)	{
 		return "index";
+	}
+	
+	@RequestMapping("login")
+	public String login(Model model){
+		
+		return "redirect:listaVeiculos";
 	}
 	
 	@RequestMapping("novoCadastro")

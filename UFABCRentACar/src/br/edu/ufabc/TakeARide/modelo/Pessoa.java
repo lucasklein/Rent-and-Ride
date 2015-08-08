@@ -54,9 +54,6 @@ public class Pessoa {
 	@NotEmpty(message="Estado não pode ser vazio!") 
 	private String estado; 
 	
-	@NotEmpty(message="Login não pode ser vazio!") 
-	private String login; 
-	
 	@NotEmpty(message="Senha não pode ser vazio!") 
 	private String senha;
 	int nivel;
@@ -173,14 +170,6 @@ public class Pessoa {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
 	}
 
 	public String getSenha() {

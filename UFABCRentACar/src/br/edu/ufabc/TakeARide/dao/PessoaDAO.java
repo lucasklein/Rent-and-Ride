@@ -32,6 +32,11 @@ public class PessoaDAO {
 	public Pessoa buscaPorId(String cpf) {
 		return manager.find(Pessoa.class, cpf);
 	}
+	
+//	// faz a busca por login
+//	public Pessoa buscaPorLogin(String login){
+//		return manager.createQuery("select a from Pessoa a where a.login = :user").setParameter("user", login).getResultList();
+//	}
 
 	// devolve uma lista com todos pessoas
 	public List<Pessoa> getLista() {
