@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3>Take a Ride</h3>
+<div class="container-fluid">
+	<button alt="Adicionar nova carona"></button>
+	
+</div>
+<div class="container-fluid">
 
+
+</div>
 </body>
 </html>

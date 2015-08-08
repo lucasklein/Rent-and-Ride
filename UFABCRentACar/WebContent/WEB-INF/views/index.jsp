@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<jsp:include page="bootstrap.jsp" />
 <meta charset="ISO-8859-1">
 <title>UFABC Rent a Car & Take a Ride - Login</title>
 <style>
@@ -52,12 +53,25 @@ form {
 	<jsp:include page="cabecalho.jsp" />
 
 	<div id="loginForm"> 	
+	
 		<form action="firstPage.jsp" method="post">
-			Usu&aacute;rio:<br/><input type="text" id="login" /><br/>
-			Senha:<br/><input type="password" id="senha" /><br/><br/>
-			<input type="submit" value=" Entrar " onclick="return validaCampos()" /> &emsp; <a href="novoCadastro">Cadastre-se Aqui!</a>  <br/>
+				  
+				  <div class="form-group">
+				    <label for="login">Usuário:</label>
+				    <input type="text" class="form-control" id="login">
+				  </div>
+				  <div class="form-group">
+				    <label for="senha">Senha:</label>
+				    <input type="password" class="form-control" id="senha">
+				  </div>
+					
+				  <button type="submit" class="btn btn-primary" onclick="return validaCampos()">Entrar</button>
+			
+
+			<!--<input type="submit" value=" Entrar " onclick="return validaCampos()" /> &emsp; --> <a href="novoCadastro">Cadastre-se Aqui!</a>  <br/>
 			
 		</form>
+		
 	</div>
 	<div style="position: absolute; bottom: 0; margin: 0; width: 100%" >
 		<jsp:include page="rodape.jsp" />
