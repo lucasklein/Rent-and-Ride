@@ -17,26 +17,26 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Veiculo {
 	
 	@Id
-	@Column(name="chassi_veiculo",unique=true)
+	@Column(unique=true)
 	private String chassi;
 	
 	@NotEmpty(message="Marca não pode ser vazio!")
-	@Column(name="marca_veiculo",nullable=false)
+	@Column(nullable=false)
 	private String marca;
 	
-	@NotEmpty(message="Ano não pode ser vazio!")
-	@Column(name="ano_veiculo",nullable=false)
-	private int ano;
+	@NotEmpty(message="Nome não pode ser vazio!")
+	@Column(nullable=false)
+	private String nome;
 	
-	@NotEmpty(message="Kilometragem não pode ser vazio!")
-	@Column(name="km_veiculo",nullable=false)
+	@Column(nullable=false)
+	private int ano;
+
+	@Column(nullable=false)
 	private int kilometragem;
 	
-	@Column(name="obs_veiculo")
 	private String observacao;
 	
-	@NotEmpty(message="Status não pode ser vazio!")
-	@Column(name="status_veiculo",nullable=false)
+	@Column(nullable=false, columnDefinition="int default 1")
 	private int status;
 	
 	@ManyToOne
@@ -60,6 +60,22 @@ public class Veiculo {
 
 	public void setMarca(String marca) {
 		this.marca = marca;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public List<Aluguel> getAlugueis() {
+		return alugueis;
+	}
+
+	public void setAlugueis(List<Aluguel> alugueis) {
+		this.alugueis = alugueis;
 	}
 
 	public int getAno() {

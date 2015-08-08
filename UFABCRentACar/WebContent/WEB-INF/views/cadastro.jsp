@@ -168,7 +168,7 @@ form {
 			Telefone:<input type="text" id="telefone" name="telefone"/><br />
 			Celular:<input type="text" id="celular" name="celular"/><br />
 			Email:<input type="text" id="email" name="email"/><br />
-			RA<input type="text" id="ra" /><br />
+			RA<input type="text" id="ra" name="ra"/><br />
 			
 			<h2>Dados de Moradia</h2>
 			<hr size="2px" color="gray" width="800px" align="left" />

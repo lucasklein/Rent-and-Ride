@@ -52,10 +52,10 @@ form {
 	<jsp:include page="cabecalho.jsp" />
 
 	<div id="loginForm"> 	
-		<form action="firstPage.jsp" method="post">
+		<form action="listaVeiculos" method="post">
 			Usu&aacute;rio:<br/><input type="text" id="login" /><br/>
 			Senha:<br/><input type="password" id="senha" /><br/><br/>
-			<input type="submit" value=" Entrar " onclick="return validaCampos()" /> &emsp; <a href="novoCadastro">Cadastre-se Aqui!</a>  <br/>
+			<input type="submit" value=" Entrar "  /> &emsp; <a href="novoCadastro">Cadastre-se Aqui!</a>  <br/>
 			
 		</form>
 	</div>

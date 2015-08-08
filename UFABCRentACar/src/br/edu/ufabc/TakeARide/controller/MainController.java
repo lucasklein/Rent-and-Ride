@@ -37,6 +37,11 @@ public class MainController {
 		return "cadastro";
 	}
 	
+	@RequestMapping("cadastroVeiculo")
+	public String cadastrarVeiculo(Model model)	{
+		return "cadastroVeiculo";
+	}
+	
 	@Transactional
 	@RequestMapping("inserePessoa")
 	public String insere(@Valid Pessoa pessoa, BindingResult result) {
@@ -48,12 +53,31 @@ public class MainController {
 		return "redirect:sucesso";
 	}
 	
-//	@RequestMapping({ "listaPessoas", "/" })
-//	public String lista(Model model) {
-//		
-//		model.addAttribute("pessoas", pessoaDAO.getLista());
-//		return "lista";
-//	}
+	@RequestMapping("listaPessoas")
+	public String listaPessoas(Model model) {
+		
+		model.addAttribute("pessoas", pessoaDAO.getLista());
+		return "lista";
+	}
+	
+	@Transactional
+	@RequestMapping("insereVeiculo")
+	public String insere(@Valid Veiculo veiculo, BindingResult result) {
+		if (result.hasErrors()) {
+			return "cadastro";
+		}
+		System.out.println("----> "+veiculo.getPessoa().getCpf());
+		veiculoDAO.insere(veiculo); 
+		System.out.println("----> Novo veiculo cadastrado!");
+		return "redirect:sucesso";
+	}
+	
+	@RequestMapping("listaVeiculos")
+	public String listaVeiculos(Model model) {
+		
+		model.addAttribute("veiculos", veiculoDAO.getListaDisponiveis());
+		return "firstPage";
+	}
 	
 	
 	@RequestMapping("sucesso")
