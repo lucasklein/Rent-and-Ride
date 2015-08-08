@@ -40,6 +40,7 @@ form {
 
 </head>
 <body>
+<<<<<<< HEAD
 	
 	<jsp:include page="cabecalho.jsp" />
 
@@ -65,5 +66,16 @@ form {
 		
 	</div>
 	<jsp:include page="rodape.jsp" />
+=======
+<h3>Take a Ride</h3>
+<div class="container-fluid">
+	<button alt="Adicionar nova carona"></button>
+	
+</div>
+<div class="container-fluid">
+
+
+</div>
+>>>>>>> origin/master
 </body>
 </html>
