@@ -3,6 +3,7 @@ package br.edu.ufabc.TakeARide.modelo;
 import java.util.List;
 
 import javax.validation.constraints.Pattern;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -21,12 +22,15 @@ public class Pessoa {
 	
 	@Id
 	@NotEmpty(message="CPF não pode ser vazio!") 
+	@Column(length = 11)
 	private String cpf; 
 	
 	@NotEmpty(message="Telefone não pode ser vazio!") 
+	@Column(length = 9)
 	private String telefone; 
 	
 	@NotEmpty(message="Celular não pode ser vazio!") 
+	@Column(length = 9)
 	private String celular; 
 	
 	@NotEmpty(message="Email não pode ser vazio!") 
@@ -40,10 +44,8 @@ public class Pessoa {
 	@NotEmpty(message="Logradouro não pode ser vazio!") 
 	private String logradouro; 
 	
-	@NotEmpty(message="Número não pode ser vazio!") 
-	private String numero; 
+	private int numero; 
 	
-	@NotEmpty(message="Complemento não pode ser vazio!") 
 	private String complemento;
 
 	@NotEmpty(message="Cidade não pode ser vazio!") 
@@ -141,11 +143,11 @@ public class Pessoa {
 		this.logradouro = logradouro;
 	}
 
-	public String getNumero() {
+	public int getNumero() {
 		return numero;
 	}
 
-	public void setNumero(String numero) {
+	public void setNumero(int numero) {
 		this.numero = numero;
 	}
 

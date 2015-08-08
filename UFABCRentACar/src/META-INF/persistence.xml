@@ -5,11 +5,14 @@
 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
 
-	<persistence-unit name="pessoas">
+	<persistence-unit name="TakeARide">
 		<!-- implementacao do JPA (provedor) -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<!-- entidade mapeada -->
 		<class>br.edu.ufabc.TakeARide.modelo.Pessoa</class>
+		<class>br.edu.ufabc.TakeARide.modelo.Carona</class>
+		<class>br.edu.ufabc.TakeARide.modelo.Aluguel</class>
+		<class>br.edu.ufabc.TakeARide.modelo.Veiculo</class>
 		<properties>
 			<!-- conexao MySQL -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

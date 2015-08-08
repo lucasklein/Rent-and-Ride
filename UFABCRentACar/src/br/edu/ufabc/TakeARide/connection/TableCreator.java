@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 public class TableCreator {
 	
 	public static void main(String[] args){
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("pessoas");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("TakeARide");
 		
 		System.out.println("Tabela Gerada!\n");
 		factory.close();

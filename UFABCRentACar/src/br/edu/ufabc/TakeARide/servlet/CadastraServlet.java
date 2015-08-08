@@ -51,7 +51,7 @@ public class CadastraServlet extends HttpServlet {
 		pessoa.setRa(ra);
 		
 		pessoa.setLogradouro(logradouro);
-		pessoa.setNumero(numero);
+		pessoa.setNumero(Integer.parseInt(numero));
 		if(!(complemento == null))
 			pessoa.setComplemento(complemento);
 		pessoa.setCidade(cidade);
@@ -70,7 +70,7 @@ public class CadastraServlet extends HttpServlet {
 		dao.cadastraCliente(pessoa); // salva no BD*/
 		
 		PessoaDAO dao = new PessoaDAO();
-		dao.cadastraPessoa(pessoa);
+		//dao.cadastraPessoa(pessoa);
 
 		// escreve a pagina que sera enviada como resposta
 		req.setAttribute("msg", "Cadastro Realizado com sucesso!");

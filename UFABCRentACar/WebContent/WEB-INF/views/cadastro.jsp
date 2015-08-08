@@ -35,7 +35,10 @@ form {
 	clear: both;
 }
 </style>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 <script type="text/javascript">
 		function validaCampos() {
 			var nome = document.getElementById('nome').value;
@@ -162,7 +165,7 @@ form {
 	<jsp:include page="cabecalho.jsp" />
 
 	<div class="registerForm">
-		<form action="cadastrar" method="post" >
+		<form action="inserePessoa" method="post" >
 			
 			<h2>Dados Pessoais</h2>
 			<hr size="2px" color="gray" width="800px" align="left" />
@@ -229,11 +232,18 @@ form {
 				  </div>
 
 			<br /> 
+<<<<<<< HEAD
 			
 			<button type="submit" class="btn btn-primary" onclick="return validaCampos()" id="envia">Cadastrar</button>
 			<button type="reset" class="btn btn-danger" onclick="return validaCampos()" id="limpa">Limpar</button>
 			
 		<input type="hidden" id="opcao" name="opcao" value="usuario" />
+=======
+			<input type="submit" value=" Cadastrar " onclick="return validaCampos()" id="envia"/> &emsp;
+			<input type="reset" value=" Limpar " onclick="return validaCampos()" id="limpa"/>
+			<input type="hidden" id="opcao" name="opcao" value="usuario" />
+			<a href="/UFABCRentACar/">Voltar</a>
+>>>>>>> origin/master
 		</form><br/>
 	</div>
 	<jsp:include page="rodape.jsp" />
