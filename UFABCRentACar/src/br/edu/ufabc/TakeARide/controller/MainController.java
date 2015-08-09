@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
 
 import br.edu.ufabc.TakeARide.dao.*;
@@ -35,9 +36,14 @@ public class MainController {
 	}
 	
 	@RequestMapping("login")
-	public String login(Model model){
-		
-		return "redirect:listaVeiculos";
+	public String login(@RequestParam("login") String cpf, @RequestParam("senha") String senha, Model model){
+		pessoaSessao = pessoaDAO.buscaPorId(cpf);
+		if((pessoaSessao != null) && (Criptografia.encripta(senha).equals(pessoaSessao.getSenha()))){
+			return "redirect:listaVeiculos";
+		} else {
+			model.addAttribute("error", "Por favor verifique seus dados");
+			return "redirect:/";
+		}
 	}
 	
 	@RequestMapping("novoCadastro")
@@ -56,6 +62,8 @@ public class MainController {
 		if (result.hasErrors()) {
 			return "cadastro";
 		}
+		
+		pessoa.setSenha(Criptografia.encripta(pessoa.getSenha()));
 		pessoaDAO.insere(pessoa); 
 		System.out.println("----> Nova pessoa cadastrada!");
 		return "redirect:sucesso";
