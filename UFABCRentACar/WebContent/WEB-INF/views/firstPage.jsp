@@ -6,7 +6,7 @@
 <head>
 <jsp:include page="bootstrap.jsp" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<style>
+
 <style>
 body {
 	margin: 0px 0px 0px 0px;
@@ -68,7 +68,7 @@ form {
 		</table>	
 	</div>
 	<div class="caronas" style="border: 3px; border-color: black;">
-		<a href="#">Cadastrar Nova Carona</a>
+		<a href="cadastroCarona">Cadastrar Nova Carona</a>
 	
 		<table  class="table table-striped">
 			<tr>

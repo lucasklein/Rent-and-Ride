@@ -6,7 +6,6 @@
 <jsp:include page="bootstrap.jsp" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style>
-<style>
 body {
 	margin: 0px 0px 0px 0px;
 	border: 0px 0px 0px 0px;
@@ -68,8 +67,8 @@ form {
 			}
 			
 			//Verifica chassi
-			if (chassi == "" || isNaN(chassi)) {
-				alert("O campo Chassi não pode ser vazio e deve conter apenas números!");
+			if (chassi == "")) {
+				alert("O campo Chassi não pode ser vazio!");
 				return false;
 			}
 			
@@ -150,7 +149,7 @@ form {
 				  </div>
 				  <div class="form-group">
 				    <label for="cpf">CPF Dono:</label>
-				    <input type="text" class="form-control" id="cpf" name="cpf">
+				    <input type="text" class="form-control" id="cpf" name="cpf" readonly="readonly" value="${pessoa.getCpf()}">
 				  </div>
 				  <div class="form-group">
 				    <label for="observacao">Observação:</label>
@@ -160,8 +159,8 @@ form {
 			<button type="submit" class="btn btn-primary" onclick="return validaCampos()" id="envia">Cadastrar</button>
 			<button type="reset" class="btn btn-danger" onclick="return validaCampos()" id="limpa">Limpar</button>			
 			
-			<input type="hidden" id="opcao" name="opcao" value="usuario" /><br/><br/>
-			<a href="/UFABCRentACar/">Voltar</a>
+			<br/><br/>
+			<a href="/">Voltar</a>
 		</form><br/>
 	</div>
 	<jsp:include page="rodape.jsp" />

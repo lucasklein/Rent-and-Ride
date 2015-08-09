@@ -53,7 +53,14 @@ public class MainController {
 	
 	@RequestMapping("cadastroVeiculo")
 	public String cadastrarVeiculo(Model model)	{
+		model.addAttribute("pessoa", pessoaSessao);
 		return "cadastroVeiculo";
+	}
+	
+	@RequestMapping("cadastroCarona")
+	public String cadastrarCarona(Model model)	{
+		model.addAttribute("pessoa", pessoaSessao);
+		return "cadastroCarona";
 	}
 	
 	@Transactional
@@ -80,13 +87,26 @@ public class MainController {
 	@RequestMapping("insereVeiculo")
 	public String insere(@Valid Veiculo veiculo, BindingResult result) {
 		if (result.hasErrors()) {
-			return "cadastro";
+			return "cadastroVeiculo";
 		}
-		System.out.println("----> "+veiculo.getPessoa().getCpf());
+		veiculo.setPessoa(pessoaSessao);
 		veiculoDAO.insere(veiculo); 
 		System.out.println("----> Novo veiculo cadastrado!");
 		return "redirect:sucesso";
 	}
+	
+	@Transactional
+	@RequestMapping("insereCarona")
+	public String insere(@Valid Carona carona, BindingResult result) {
+		if (result.hasErrors()) {
+			return "cadastroCarona";
+		}
+		carona.setPessoa(pessoaSessao);
+		caronaDAO.insere(carona); 
+		System.out.println("----> Nova carona cadastrado!");
+		return "redirect:sucesso";
+	}
+	
 	
 	@RequestMapping("listaVeiculos")
 	public String listaVeiculos(Model model) {

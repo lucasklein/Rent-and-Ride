@@ -24,7 +24,6 @@ public class Carona {
 	@Column(name="id_carona")
 	private int id;
 	
-	@NotEmpty(message="Quantidade de vagas não pode ser vazio!")
 	@Column(nullable=false)
 	private int qtd_vagas;
 	
@@ -36,7 +35,6 @@ public class Carona {
 	@Column(nullable=false)
 	private String destino;
 	
-	@NotEmpty(message="Destino não pode ser vazio!")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable=false)
 	private Date data_saida;

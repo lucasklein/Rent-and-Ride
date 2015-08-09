@@ -18,7 +18,7 @@ body {
 
 	<jsp:include page="cabecalho.jsp" />
 
-	<h3>Usuário cadastrado com sucesso!</h3>
+	<h3>Cadastrado com sucesso!</h3>
 	<br>
 	<br>
 	<a href="/UFABCRentACar/">Voltar</a>
