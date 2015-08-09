@@ -101,9 +101,9 @@ form {
 				    <input type="text" class="form-control" id="destino" name="destino">
 				  </div>
 				  <div class="form-group">
-				    <label for="data_saida">Data de Sa&iacute;da:</label>
-					<input type='text' class="form-control" id='data_saida' name="data_saida"/>
-					</div>
+				    <label for="marca">Data de Saida:</label>
+				    <input type="text" class="form-control" id="destino" name="destino" placeholder="dd/mm/aaaa hh:mm">
+				  </div>
 				  <div class="form-group">
 				    <label for="cpf">CPF Motorista:</label>
 				    <input type="text" class="form-control" id="cpf" name="cpf" readonly="readonly" value="${pessoa.getCpf()}">
@@ -116,6 +116,5 @@ form {
 			<a href="/UFABCRentACar/">Voltar</a>
 		</form><br/>
 	</div>
-	<jsp:include page="rodape.jsp" />
 </body>
 </html>

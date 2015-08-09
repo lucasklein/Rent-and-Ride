@@ -43,7 +43,7 @@ public class VeiculoDAO {
 	
 	public List<Veiculo> getListaDisponiveis() {
 		@SuppressWarnings("unchecked")
-		List<Veiculo> veiculos = manager.createQuery("select a from Veiculo a where status=1")
+		List<Veiculo> veiculos = manager.createQuery("select a from Veiculo a where status=0")
 				.getResultList();
 		return veiculos;
 	}

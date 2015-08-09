@@ -12,29 +12,26 @@ body {
 	margin: 0px 0px 0px 0px;
 	border: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
-}
+	}
 
 a {
 	color: blue;
 	font: bold;
 }
 
-form {
-	width: auto;
-	height: auto;
+.conteudo{
+	width: 100%;
 }
 .veiculos {
 	float: left;
-	position: relative;
 	width: 50%;
-	clear: both;
+	padding: 5px 5px 5px 5px;
 }
 
 .caronas {
 	float: left;
-	position: relative;
 	width: 50%;
-	clear: both;
+	padding: 5px 5px 5px 5px;
 }
 </style>
 <script type="text/javascript">
@@ -43,51 +40,58 @@ form {
 
 </head>
 <body>
-	
 	<jsp:include page="cabecalho.jsp" />
 
-	<div class="veiculos" style="border: 3px; border-color: black;">
-		<a href="cadastroVeiculo">Cadastrar Novo Veículo</a>
-	
-		<table  class="table table-striped">
-			<tr>
-				<td><b>Nome</b></td>
-				<td><b>Marca</b></td>
-				<td><b>Ano</b></td>
-				<td><b>Kilometragem</b></td>
-			</tr>
-			<c:forEach items="${veiculos}" var="veiculo">
+	<div class=conteudo>
+
+		<div class="veiculos">
+			<a class="btn btn-default" role="button" href="cadastroVeiculo">Cadastrar Novo Veículo</a>
+			<br/><br/>
+			<table  class="table table-striped">
 				<tr>
-					<td>${veiculo.nome}</td>
-					<td>${veiculo.marca}</td>
-					<td>${veiculo.ano}</td>
-					<td>${veiculo.kilometragem}</td>
+					<td><b>Nome</b></td>
+					<td><b>Marca</b></td>
+					<td><b>Ano</b></td>
+					<td><b>Kilometragem</b></td>
+					<td><b>Detalhes</b></td>
 				</tr>
-				<hr size="2px" color="gray" width="800px" align="left" />
-			</c:forEach>
-		</table>	
-	</div>
-	<div class="caronas" style="border: 3px; border-color: black;">
-		<a href="cadastroCarona">Cadastrar Nova Carona</a>
+				<c:forEach items="${veiculos}" var="veiculo">
+					<tr>
+						<td>${veiculo.nome}</td>
+						<td>${veiculo.marca}</td>
+						<td>${veiculo.ano}</td>
+						<td>${veiculo.kilometragem}</td>
+					</tr>
 	
-		<table  class="table table-striped">
-			<tr>
-				<td><b>Vagas</b></td>
-				<td><b>Origem</b></td>
-				<td><b>Destino</b></td>
-				<td><b>Data</b></td>
-			</tr>
-			<c:forEach items="${caronas}" var="carona">
+				</c:forEach>
+			</table>	
+		</div>
+		
+		<div class="caronas">
+			<a class="btn btn-default" role="button" href="cadastroCarona">Cadastrar Nova Carona</a>
+			<br/><br/>
+			<table  class="table table-striped">
 				<tr>
-					<td>${carona.qtd_vagas}</td>
-					<td>${carona.partida}</td>
-					<td>${carona.destino}</td>
-					<td>${carona.data_saida}</td>
+					<td><b>Vagas</b></td>
+					<td><b>Origem</b></td>
+					<td><b>Destino</b></td>
+					<td><b>Data</b></td>
+					<td><b>Detalhes</b></td>
 				</tr>
-				<hr size="2px" color="gray" width="800px" align="left" />
-			</c:forEach>
-		</table>	
+				<c:forEach items="${caronas}" var="carona">
+					<tr>
+						<td>${carona.qtd_vagas}</td>
+						<td>${carona.partida}</td>
+						<td>${carona.destino}</td>
+						<td>${carona.data_saida}</td>
+					</tr>
+					
+				</c:forEach>
+			</table>	
+		</div>
 	</div>
-	<jsp:include page="rodape.jsp" />
+	<div style="position: absolute; bottom: 0; margin: 0; width: 100%" >
+		<jsp:include page="rodape.jsp" />
+	</div>
 </body>
 </html>
