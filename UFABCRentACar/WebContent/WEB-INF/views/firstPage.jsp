@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<jsp:include page="bootstrap.jsp" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style>
 <style>
@@ -14,7 +15,7 @@ body {
 }
 
 a {
-	color: yellow;
+	color: blue;
 	font: bold;
 }
 
@@ -48,7 +49,7 @@ form {
 	<div class="veiculos" style="border: 3px; border-color: black;">
 		<a href="cadastroVeiculo">Cadastrar Novo Veículo</a>
 	
-		<table>
+		<table  class="table table-striped">
 			<tr>
 				<td><b>Nome</b></td>
 				<td><b>Marca</b></td>
@@ -69,7 +70,7 @@ form {
 	<div class="caronas" style="border: 3px; border-color: black;">
 		<a href="#">Cadastrar Nova Carona</a>
 	
-		<table>
+		<table  class="table table-striped">
 			<tr>
 				<td><b>Vagas</b></td>
 				<td><b>Origem</b></td>

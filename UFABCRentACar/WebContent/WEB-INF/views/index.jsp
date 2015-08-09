@@ -30,7 +30,7 @@ form {
 }
 </style>
 </head>
-<!--  Teste do GitHub -->
+
 <body>
 	<script type="text/javascript">
 		function validaCampos() {
