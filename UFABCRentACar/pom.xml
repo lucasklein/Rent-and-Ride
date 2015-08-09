@@ -58,6 +58,11 @@
 		    <artifactId>spring-orm</artifactId>
 	    	<version>4.1.7.RELEASE</version>
 		</dependency>
+		<dependency>
+    		<groupId>com.efsavage.jquery</groupId>
+    		<artifactId>jquery-maven</artifactId>
+    		<version>1.7.2</version>
+		</dependency>
 	</dependencies>
 
 
