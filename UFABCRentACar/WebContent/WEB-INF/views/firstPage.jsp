@@ -35,8 +35,14 @@ a {
 }
 </style>
 <script type="text/javascript">
-		
-	</script>
+$("#btnAluga").click(function() {
+    var $vagas = $(this).closest("tr")   // Finds the closest row <tr> 
+                       .find("#vagas")     // Gets a descendent with class="nr"
+                       .text();         // Retrieves the text within <td>
+
+    $("#vagasCarona").append($item);       // Outputs the answer
+});		
+</script>
 
 </head>
 <body>
@@ -52,12 +58,19 @@ a {
 		        <h4 class="modal-title" id="Detalhes">Detalhes da Carona</h4>
 		      </div>
 		      <div class="modal-body">
-		      			<b>Carona oferecida por:</b> Nome do Motorista
+		      			<b>Carona oferecida por:</b> <label id="motoristaCarona"></label>
 		      			<br/><br/>
-		      			Quantidade de Vagas: ${carona.qtd_vagas}
-						${carona.partida}
-						${carona.destino}
-						${carona.data_saida}
+		      			<b>Quantidade de Vagas:</b> <label id="vagasCarona"></label>
+		      			<br/><br/>
+		      			<b>Origem da Carona:</b> <label id="origemCarona"></label>
+		      			<br/><br/>
+		      			<b>Destino da Carona:</b> <label id="destinoCarona"></label>
+		      			<br/><br/>
+		      			<b>Horário da Carona:</b> <label id="dataCarona"></label>
+		      			<br/><br/>
+		      			<b>Mapa:</b><br/>
+		      			
+		      			<!-- TODO:Add Google Maps -->
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -76,7 +89,16 @@ a {
 		        <h4 class="modal-title" id="Detalhes">Detalhes do Veiculo</h4>
 		      </div>
 		      <div class="modal-body">
-		      		<!--  TODO: Add Modal Body -->
+		      			<b>Veiculo oferecida por:</b> <label id="donoVeiculo"></label>
+		      			<br/><br/>
+		      			<b>Modelo do Veiculo:</b> <label id="modeloVeiculo"></label>
+		      			<br/><br/>
+		      			<b>Marca do Veiculo:</b> <label id="marcaVeiculo"></label>
+		      			<br/><br/>
+		      			<b>Kilometragem:</b> <label id="kmVeiculo"></label>
+		      			<br/><br/>
+		      			<b>Observações:</b> <label id="obsVeiculo"></label>
+		      			<br/><br/>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -106,7 +128,7 @@ a {
 						<td>${veiculo.ano}</td>
 						<td>${veiculo.kilometragem}</td>
 						<td>
-							<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#detalhesAluga">
+							<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#detalhesAluga" id="btnAluga">
 	  							Mais
 							</button>
 						</td>
@@ -121,7 +143,7 @@ a {
 			<br/><br/>
 			<table  class="table table-striped">
 				<tr>
-					<td><b>Vagas</b></td>
+					<td id="vagas"><b>Vagas</b></td>
 					<td><b>Origem</b></td>
 					<td><b>Destino</b></td>
 					<td><b>Data</b></td>
