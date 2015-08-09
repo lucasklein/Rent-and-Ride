@@ -14,7 +14,7 @@ body {
 }
 
 a {
-	color: yellow;
+	color: blue;
 	font: bold;
 }
 

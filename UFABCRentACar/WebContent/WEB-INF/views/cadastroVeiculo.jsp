@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<jsp:include page="bootstrap.jsp" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style>
 <style>
@@ -13,7 +14,7 @@ body {
 }
 
 a {
-	color: yellow;
+	color: blue;
 	font: bold;
 }
 
@@ -126,18 +127,40 @@ form {
 			
 			<h2>Dados Veiculo</h2>
 			<hr size="2px" color="gray" width="800px" align="center" />
-			Nome: <input type="text" id="nome" name="nome"/><br /> 
-			Marca: <input type="text" id="marca" name="marca"  /><br />
-			Ano:<input type="text" id="ano" name="ano" onKeyUp="javascript:numbersOnly(this);"/><br />
-			Kilometragem:<input type="text" id="kilometragem" name="kilometragem" onKeyUp="javascript:numbersOnly(this);"/><br />
-			Chassi:<input type="text" id="chassi" name="chassi"/><br />
-			CPF Dono<input type="text" id="cpf" name="cpf" /><br />
-			Observação:<input type="text" id="observacao" name="observacao" /><br />
 			
+				  <div class="form-group">
+				    <label for="nome">Nome:</label>
+				    <input type="text" class="form-control" id="nome" name="nome">
+				  </div>
+				  <div class="form-group">
+				    <label for="marca">Marca:</label>
+				    <input type="text" class="form-control" id="marca" name="marca">
+				  </div>
+				  <div class="form-group">
+				    <label for="ano">Ano:</label>
+				    <input type="text" class="form-control" id="ano" name="ano" onKeyUp="javascript:numbersOnly(this);">
+				  </div>
+				  <div class="form-group">
+				    <label for="kilometragem">Kilometragem:</label>
+				    <input type="text" class="form-control" id="kilometragem" name="kilometragem" onKeyUp="javascript:numbersOnly(this);">
+				  </div>
+				  <div class="form-group">
+				    <label for="chassi">Chassi:</label>
+				    <input type="text" class="form-control" id="chassi" name="chassi">
+				  </div>
+				  <div class="form-group">
+				    <label for="cpf">CPF Dono:</label>
+				    <input type="text" class="form-control" id="cpf" name="cpf">
+				  </div>
+				  <div class="form-group">
+				    <label for="observacao">Observação:</label>
+				    <input type="text" class="form-control" id="observacao" name="observacao">
+				  </div>
+		
+			<button type="submit" class="btn btn-primary" onclick="return validaCampos()" id="envia">Cadastrar</button>
+			<button type="reset" class="btn btn-danger" onclick="return validaCampos()" id="limpa">Limpar</button>			
 			
-			<input type="submit" value=" Cadastrar " onclick="return validaCampos()" id="envia"/> &emsp;
-			<input type="reset" value=" Limpar " onclick="return validaCampos()" id="limpa"/>
-			<input type="hidden" id="opcao" name="opcao" value="usuario" />
+			<input type="hidden" id="opcao" name="opcao" value="usuario" /><br/><br/>
 			<a href="/UFABCRentACar/">Voltar</a>
 		</form><br/>
 	</div>

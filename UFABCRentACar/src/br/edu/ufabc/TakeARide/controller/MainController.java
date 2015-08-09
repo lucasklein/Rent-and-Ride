@@ -90,8 +90,8 @@ public class MainController {
 	
 	@RequestMapping("listaVeiculos")
 	public String listaVeiculos(Model model) {
-		
 		model.addAttribute("veiculos", veiculoDAO.getListaDisponiveis());
+		model.addAttribute("caronas", caronaDAO.getLista());
 		return "firstPage";
 	}
 	

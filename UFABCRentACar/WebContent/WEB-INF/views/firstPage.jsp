@@ -22,15 +22,17 @@ form {
 	width: auto;
 	height: auto;
 }
-.registerForm {
+.veiculos {
 	float: left;
-	margin-left: 20%;
-	width: 600px;
+	position: relative;
+	width: 50%;
 	clear: both;
 }
 
-.registerForm input {
-	width: 100%;
+.caronas {
+	float: left;
+	position: relative;
+	width: 50%;
 	clear: both;
 }
 </style>
@@ -43,10 +45,10 @@ form {
 	
 	<jsp:include page="cabecalho.jsp" />
 
-	<div class="veiculos">
+	<div class="veiculos" style="border: 3px; border-color: black;">
 		<a href="cadastroVeiculo">Cadastrar Novo Veículo</a>
 	
-		<table border=1>
+		<table>
 			<tr>
 				<td><b>Nome</b></td>
 				<td><b>Marca</b></td>
@@ -60,9 +62,30 @@ form {
 					<td>${veiculo.ano}</td>
 					<td>${veiculo.kilometragem}</td>
 				</tr>
+				<hr size="2px" color="gray" width="800px" align="left" />
 			</c:forEach>
 		</table>	
-		
+	</div>
+	<div class="caronas" style="border: 3px; border-color: black;">
+		<a href="#">Cadastrar Nova Carona</a>
+	
+		<table>
+			<tr>
+				<td><b>Vagas</b></td>
+				<td><b>Origem</b></td>
+				<td><b>Destino</b></td>
+				<td><b>Data</b></td>
+			</tr>
+			<c:forEach items="${caronas}" var="carona">
+				<tr>
+					<td>${carona.qtd_vagas}</td>
+					<td>${carona.partida}</td>
+					<td>${carona.destino}</td>
+					<td>${carona.data_saida}</td>
+				</tr>
+				<hr size="2px" color="gray" width="800px" align="left" />
+			</c:forEach>
+		</table>	
 	</div>
 	<jsp:include page="rodape.jsp" />
 </body>

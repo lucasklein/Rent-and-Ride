@@ -13,7 +13,7 @@ body {
 }
 
 a {
-	color: yellow;
+	color: blue;
 	font: bold;
 }
 
@@ -225,9 +225,10 @@ form {
 			
 			<button type="submit" class="btn btn-primary" onclick="return validaCampos()" id="envia">Cadastrar</button>
 			<button type="reset" class="btn btn-danger" onclick="return validaCampos()" id="limpa">Limpar</button>			
+			
 			<input type="hidden" id="opcao" name="opcao" value="usuario" />
 		</form><br/>
-		<a href="/">Voltar</a>
+		<a href="/UFABCRentACar/">Voltar</a>
 	</div>
 	<jsp:include page="rodape.jsp" />
 </body>
