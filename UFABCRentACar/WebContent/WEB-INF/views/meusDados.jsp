@@ -79,6 +79,7 @@ a {
 					<td><b>Marca</b></td>
 					<td><b>Ano</b></td>
 					<td><b>Kilometragem</b></td>
+					<td><b></b></td>
 				</tr>
 				<c:forEach items="${veiculos}" var="veiculo">
 					<tr>
@@ -86,6 +87,11 @@ a {
 						<td>${veiculo.marca}</td>
 						<td>${veiculo.ano}</td>
 						<td>${veiculo.kilometragem}</td>
+						<td>
+							<a class="btn btn-info btn-sm" role="button" href="removeVeiculo?chassi=${veiculo.chassi}">
+	  							Deletar
+							</button>
+						</td>
 					</tr>
 	
 				</c:forEach>
@@ -100,6 +106,7 @@ a {
 					<td><b>Origem</b></td>
 					<td><b>Destino</b></td>
 					<td><b>Data</b></td>
+					<td><b>Cancelar Carona</b></td>
 				</tr>
 				<c:forEach items="${caronas}" var="carona">
 					<tr>
@@ -107,6 +114,11 @@ a {
 						<td>${carona.partida}</td>
 						<td>${carona.destino}</td>
 						<td>${carona.data_saida}</td>
+						<td>
+							<a class="btn btn-info btn-sm" role="button" href="removeCarona?id=${carona.id}">
+	  							Cancelar
+							</button>
+						</td>
 					</tr>
 					
 				</c:forEach>

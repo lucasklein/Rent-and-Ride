@@ -96,6 +96,18 @@ public class MainController {
 	}
 	
 	@Transactional
+	@RequestMapping("removeVeiculo")
+	public String remove(String chassi, Model model){
+		if(chassi != null){
+			Veiculo veiculo = veiculoDAO.buscaPorId(chassi);
+			if(veiculo.getAlugueis().size() == 0)
+				veiculoDAO.remove(veiculo);
+			return "redirect:meusDados";
+		}
+		return "redirect:meusDados";
+	}
+	
+	@Transactional
 	@RequestMapping("insereCarona")
 	public String insere(@Valid Carona carona, BindingResult result) {
 		if (result.hasErrors()) {
@@ -105,6 +117,18 @@ public class MainController {
 		caronaDAO.insere(carona); 
 		System.out.println("----> Nova carona cadastrado!");
 		return "redirect:listaVeiculos";
+	}
+	
+	@Transactional
+	@RequestMapping("removeCarona")
+	public String remove(int id, Model model){
+		if(id > 0){
+			Carona carona = caronaDAO.buscaPorId(id);
+			caronaDAO.remove(carona);
+
+			return "redirect:meusDados";
+		}
+		return "redirect:meusDados";
 	}
 	
 	@Transactional
