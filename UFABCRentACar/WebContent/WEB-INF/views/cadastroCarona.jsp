@@ -121,8 +121,9 @@ form {
 			<button type="reset" class="btn btn-danger" onclick="return validaCampos()" id="limpa">Limpar</button>			
 			
 			<br/><br/>
-			<a href="/UFABCRentACar/">Voltar</a>
+			<a href="/UFABCRentACar/listaVeiculos">Voltar</a>
 		</form><br/>
+		
 	</div>
 </body>
 </html>

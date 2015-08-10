@@ -160,8 +160,9 @@ form {
 			<button type="reset" class="btn btn-danger" onclick="return validaCampos()" id="limpa">Limpar</button>			
 			
 			<br/><br/>
-			<a href="/UFABCRentACar/">Voltar</a>
+			
 		</form><br/>
+		<a href="/UFABCRentACar/listaVeiculos">Voltar</a>
 	</div>
 	<jsp:include page="rodape.jsp" />
 </body>

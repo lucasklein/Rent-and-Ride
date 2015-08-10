@@ -228,7 +228,7 @@ form {
 			
 			<input type="hidden" id="opcao" name="opcao" value="usuario" />
 		</form><br/>
-		<a href="/UFABCRentACar/">Voltar</a>
+		<a href="/UFABCRentACar/listaVeiculos">Voltar</a>
 	</div>
 	<jsp:include page="rodape.jsp" />
 </body>
