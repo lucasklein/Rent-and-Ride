@@ -13,4 +13,3 @@ INSERT INTO carona VALUES (6,'2015-08-13 21:55', 'Av Chucri Zaidan, 939', 'Av Gi
 INSERT INTO carona VALUES (7,'2015-08-11 20:00', 'Rua Arcturus, 133', 'Avenida Atlantica, 1800', 1, '42912262844');
 
 INSERT INTO aluga VALUES (1,'2015-08-12 23:25', '2015-08-13 23:25', 'Aluguel de 24 horas', '42912262844' ,'32RD32F54H65');
-
