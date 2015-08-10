@@ -51,6 +51,7 @@ $("#btnAluga").click(function() {
 	<div class=conteudo>
 		<div class="veiculos">
 			<a class="btn btn-default" role="button" href="cadastroVeiculo">Cadastrar Novo Veículo</a>
+			<a class="btn btn-default" role="button" href="meusDados">Meus Dados</a>
 			<br/><br/>
 			<table  class="table table-striped">
 				<tr>

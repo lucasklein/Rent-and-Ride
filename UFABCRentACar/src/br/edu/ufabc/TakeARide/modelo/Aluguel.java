@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.validator.constraints.NotEmpty;
+
 
 @Entity
 @Table(name="aluga")
@@ -22,12 +22,10 @@ public class Aluguel {
 	@GeneratedValue
 	private int id;
 	
-	@NotEmpty(message="Data inicio não pode ser vazio!")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable=false)
 	private Date data_inicio;
 	
-	@NotEmpty(message="Data Devolucao não pode ser vazio!")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable=false)
 	private Date data_devolucao;
@@ -37,6 +35,10 @@ public class Aluguel {
 	@ManyToOne
 	@JoinColumn(name = "cpf_cliente",nullable=false)
 	private Pessoa pessoa;
+	
+	@ManyToOne
+	@JoinColumn(name = "cpf_locatario",nullable=false)
+	private Pessoa locatario;
 	
 	@ManyToOne
 	@JoinColumn(name = "chassi_veiculo",nullable=false)
@@ -78,6 +80,17 @@ public class Aluguel {
 	public void setVeiculo(Veiculo veiculo) {
 		this.veiculo = veiculo;
 	}
+	public Pessoa getLocatario() {
+		return locatario;
+	}
+	public void setLocatario(Pessoa locatario) {
+		this.locatario = locatario;
+	}
 	
+	public void serialize(AluguelSerializer serializer){
+		this.data_devolucao = serializer.getData_devolucao();
+		this.data_inicio = serializer.getData_inicio();
+		this.observacao = serializer.getObservacao();
+	}
 
 }

@@ -39,6 +39,11 @@ form {
 			var destino = document.getElementById('destino').value;
 			var qtd_vagas = document.getElementById('qtd_vagas').value;
 			var data_saida = document.getElementById('data_saida').value;
+			
+			data_saida.format("mm-dd-yyyy HH:MM:ss");
+			alert(data_saida);
+			
+			
 			//Verifica origem
 			if (partida == "" || null) {
 				alert("O campo partida não pode ser vazio!");
@@ -62,6 +67,9 @@ form {
 				alert("O campo data de saida não pode ser vazio!");
 				return false;
 			}
+			
+			data_saida.format("mm-dd-yyyy HH:MM:ss");
+			alert(data_saida);
 	
 		}
 		
@@ -89,20 +97,20 @@ form {
 			<h2>Dados da Carona</h2>
 			<hr size="2px" color="gray" width="800px" align="center" />
 				  <div class="form-group">
-				    <label for="ano">Quantidade de Vagas:</label>
+				    <label for="qtd_vagas">Quantidade de Vagas:</label>
 				    <input type="text" class="form-control" id="qtd_vagas" name="qtd_vagas" onKeyUp="javascript:numbersOnly(this);">
 				  </div>
 				  <div class="form-group">
-				    <label for="nome">Endereço de Origem:</label>
+				    <label for="partida">Endereço de Origem:</label>
 				    <input type="text" class="form-control" id="partida" name="partida">
 				  </div>
 				  <div class="form-group">
-				    <label for="marca">Endereço de Destino:</label>
+				    <label for="destino">Endereço de Destino:</label>
 				    <input type="text" class="form-control" id="destino" name="destino">
 				  </div>
 				  <div class="form-group">
-				    <label for="marca">Data de Saida:</label>
-				    <input type="text" class="form-control" id="data_saida" name="data_saida" placeholder="dd/mm/aaaa hh:mm">
+				    <label for="data_saida">Data de Saida:</label>
+				    <input type="text" class="form-control" id="data_saida" name="data_saida" placeholder="mm/dd/aaaa hh:mm">
 				  </div>
 				  <div class="form-group">
 				    <label for="cpf">CPF Motorista:</label>

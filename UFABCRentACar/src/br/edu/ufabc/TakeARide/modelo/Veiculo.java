@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -43,7 +44,7 @@ public class Veiculo {
 	@JoinColumn(name = "cpf_cliente",nullable=false)
 	private Pessoa pessoa;
 	
-	@OneToMany(targetEntity=Aluguel.class,mappedBy="veiculo")
+	@OneToMany(fetch = FetchType.EAGER, targetEntity=Aluguel.class, mappedBy="veiculo")
 	private List<Aluguel> alugueis;
 
 	public String getChassi() {

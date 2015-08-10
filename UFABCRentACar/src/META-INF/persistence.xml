@@ -28,9 +28,9 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 			<property name="javax.persistence.jdbc.password" value="admin" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/> -->
 	       
-			<!-- imprime as queries SQL no console -->
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" />
+			<!--  imprime as queries SQL no console -->
+			<!-- <property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" /> -->
 			<!-- gera as tabelas se necessario -->
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>

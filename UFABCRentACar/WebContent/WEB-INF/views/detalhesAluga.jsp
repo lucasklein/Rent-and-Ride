@@ -42,10 +42,9 @@ label{
 	<div class=conteudo>
 		
 		<div class="veiculos">	
-		<form action="#" method="post" >
+		<form action="insereAluguel" method="post" >
 			<h2>Dados do Dono</h2>
 			<hr size="2px" color="gray" width="100%" align="left" />
-			
 				  <div class="form-group">
 				    <label for="nome">Nome:</label> <label for="nome">${pessoa.getNome()}</label>
 				  </div>
@@ -77,8 +76,30 @@ label{
 				    <label for="obs">Observaç&otilde;es:</label> <label for="obs">${veiculo.getObservacao()}</label>
 				 </div>  
 				<br />
-				<button type="submit" class="btn btn-primary btn-lg" id="envia">Entre em contato</button>
+				
+				<h2>Dados do Aluguel</h2>
+				<hr size="2px" color="gray" width="100%" align="left" />
+				  <div class="form-group">
+				    <label for="data_inicio">Data Inicio:</label>
+				    <input type="text" class="form-control" id="data_inicio" name="data_inicio" placeholder="mm/dd/aaaa hh:mm">
+				  </div>
+				  <div class="form-group">
+				    <label for="data_devolucao">Data de Devolucao:</label>
+				    <input type="text" class="form-control" id="data_devolucao" name="data_devolucao" placeholder="mm/dd/aaaa hh:mm">
+				  </div>
+				  <div class="form-group">
+				    <label for="observacao">Observacao:</label>
+				    <input type="text" class="form-control" id="observacao" name="observacao">
+				  </div>
+				  <div class="form-group">
+				    <input type="hidden" class="form-control" id="idPessoa" name="idPessoa" value='${pessoa.getCpf()}' visible=false>
+				  </div>	
+				  <div class="form-group">
+				    <input type="hidden" class="form-control" id="idVeiculo" name="idVeiculo" value='${veiculo.getChassi()}' visible=false>
+				  </div>
+				  <button type="submit" class="btn btn-primary btn-lg" id="envia">Entre em contato</button>
 				<br/><br/><br/>
+			</form>
 		</div>
 
 	</div>

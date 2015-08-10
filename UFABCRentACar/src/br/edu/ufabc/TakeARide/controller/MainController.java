@@ -73,7 +73,7 @@ public class MainController {
 		pessoa.setSenha(Criptografia.encripta(pessoa.getSenha()));
 		pessoaDAO.insere(pessoa); 
 		System.out.println("----> Nova pessoa cadastrada!");
-		return "redirect:sucesso";
+		return "redirect:listaVeiculos";
 	}
 	
 	@RequestMapping("listaPessoas")
@@ -92,7 +92,7 @@ public class MainController {
 		veiculo.setPessoa(pessoaSessao);
 		veiculoDAO.insere(veiculo); 
 		System.out.println("----> Novo veiculo cadastrado!");
-		return "redirect:sucesso";
+		return "redirect:listaVeiculos";
 	}
 	
 	@Transactional
@@ -104,7 +104,30 @@ public class MainController {
 		carona.setPessoa(pessoaSessao);
 		caronaDAO.insere(carona); 
 		System.out.println("----> Nova carona cadastrado!");
-		return "redirect:sucesso";
+		return "redirect:listaVeiculos";
+	}
+	
+	@Transactional
+	@RequestMapping("insereAluguel")
+	public String insere(@Valid AluguelSerializer serializer, BindingResult result) {
+		if (result.hasErrors()) {
+			return "detalhesAluga";
+		}
+		Pessoa dono = pessoaDAO.buscaPorId(serializer.getIdPessoa());
+		Veiculo veiculo = veiculoDAO.buscaPorId(serializer.getIdVeiculo());
+		veiculo.setStatus(1);
+		
+		Aluguel aluguel = new Aluguel();
+		
+		aluguel.serialize(serializer);
+		aluguel.setPessoa(dono);
+		aluguel.setVeiculo(veiculo);
+		aluguel.setLocatario(pessoaSessao);
+
+		aluguelDAO.insere(aluguel);
+		veiculoDAO.altera(veiculo);
+
+		return "redirect:listaVeiculos";
 	}
 	
 	
@@ -119,6 +142,23 @@ public class MainController {
 	@RequestMapping("sucesso")
 	public String sucesso(Model model){
 		return "sucesso";
+	}
+	
+	@RequestMapping("meusDados")
+	public String meusDados(Model model){
+		
+		pessoaSessao = pessoaDAO.buscaPorId(pessoaSessao.getCpf());
+		
+		model.addAttribute("pessoa", pessoaSessao);
+		model.addAttribute("veiculos", pessoaSessao.getVeiculos());
+		model.addAttribute("aluguels", pessoaSessao.getAlugueis());
+		model.addAttribute("aluguelsSolicitados", pessoaSessao.getAlugueisSolicitados());
+		model.addAttribute("caronas", pessoaSessao.getCaronas());
+		
+		System.out.println("Cedidos---> " + pessoaSessao.getAlugueis().size());
+		System.out.println("Solicitados---> " + pessoaSessao.getAlugueisSolicitados().size());
+		
+		return "meusDados";	
 	}
 	
 	@RequestMapping("detalhesCarona")

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.constraints.Pattern;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -58,14 +59,17 @@ public class Pessoa {
 	private String senha;
 	int nivel;
 	
-	@OneToMany(targetEntity=Veiculo.class,mappedBy="pessoa")
+	@OneToMany(fetch = FetchType.EAGER, targetEntity=Veiculo.class, mappedBy="pessoa")
 	private List<Veiculo> veiculos;
 	
-	@OneToMany(targetEntity=Aluguel.class,mappedBy="pessoa")
+	@OneToMany(fetch = FetchType.EAGER, targetEntity=Aluguel.class, mappedBy="pessoa")
 	private List<Aluguel> alugueis;
 	
-	@OneToMany(targetEntity=Carona.class,mappedBy="pessoa")
-	private List<Carona> carona;
+	@OneToMany(fetch = FetchType.EAGER, targetEntity=Aluguel.class, mappedBy="pessoa")
+	private List<Aluguel> alugueisSolicitados;
+	
+	@OneToMany(fetch = FetchType.EAGER, targetEntity=Carona.class, mappedBy="pessoa")
+	private List<Carona> caronas;
 	
 	public int getNivel() {
 		return nivel;
@@ -180,6 +184,42 @@ public class Pessoa {
 		this.senha = senha;
 	}
 	
+	public List<Veiculo> getVeiculos() {
+		return veiculos;
+	}
+
+	public void setVeiculos(List<Veiculo> veiculos) {
+		this.veiculos = veiculos;
+	}
+
+	public List<Aluguel> getAlugueis() {
+		return alugueis;
+	}
+
+	public void setAlugueis(List<Aluguel> alugueis) {
+		this.alugueis = alugueis;
+	}
+
+	public List<Carona> getCaronas() {
+		return caronas;
+	}
+
+	public void setCaronas(List<Carona> carona) {
+		this.caronas = carona;
+	}
+
+	public List<Aluguel> getAlugueisSolicitados() {
+		return alugueisSolicitados;
+	}
+
+	public void setAlugueisSolicitados(List<Aluguel> alugueisSolicitados) {
+		this.alugueisSolicitados = alugueisSolicitados;
+	}
+	
+	public void addAluguelSolicitados(Aluguel aluguelSolicitado) {
+		this.alugueisSolicitados.add(aluguelSolicitado);
+	}
+
 	public boolean validaSenha(String senha){
 		if(senha == getSenha())
 			return true;
