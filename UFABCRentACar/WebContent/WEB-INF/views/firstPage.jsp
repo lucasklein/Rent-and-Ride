@@ -49,67 +49,6 @@ $("#btnAluga").click(function() {
 	<jsp:include page="cabecalho.jsp" />
 
 	<div class=conteudo>
-		<!-- Modal Carona-->
-		<div class="modal fade" id="detalhesCarona" tabindex="-1" role="dialog" aria-labelledby="Detalhes de Carona">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="Detalhes">Detalhes da Carona</h4>
-		      </div>
-		      <div class="modal-body">
-		      			<b>Carona oferecida por:</b> <label id="motoristaCarona"></label>
-		      			<br/><br/>
-		      			<b>Quantidade de Vagas:</b> <label id="vagasCarona"></label>
-		      			<br/><br/>
-		      			<b>Origem da Carona:</b> <label id="origemCarona"></label>
-		      			<br/><br/>
-		      			<b>Destino da Carona:</b> <label id="destinoCarona"></label>
-		      			<br/><br/>
-		      			<b>Horário da Carona:</b> <label id="dataCarona"></label>
-		      			<br/><br/>
-		      			<b>Mapa:</b><br/>
-		      			
-		      			<!-- TODO:Add Google Maps -->
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-		        <button type="button" class="btn btn-primary">Aceitar Carona</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-
-		<!-- Modal Aluga-->
-		<div class="modal fade" id="detalhesAluga" tabindex="-1" role="dialog" aria-labelledby="Detalhes do Veiculo">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="Detalhes">Detalhes do Veiculo</h4>
-		      </div>
-		      <div class="modal-body">
-		      			<b>Veiculo oferecida por:</b> <label id="donoVeiculo"></label>
-		      			<br/><br/>
-		      			<b>Modelo do Veiculo:</b> <label id="modeloVeiculo"></label>
-		      			<br/><br/>
-		      			<b>Marca do Veiculo:</b> <label id="marcaVeiculo"></label>
-		      			<br/><br/>
-		      			<b>Kilometragem:</b> <label id="kmVeiculo"></label>
-		      			<br/><br/>
-		      			<b>Observações:</b> <label id="obsVeiculo"></label>
-		      			<br/><br/>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-		        <button type="button" class="btn btn-primary">Alugar Veiculo</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-
-
-
 		<div class="veiculos">
 			<a class="btn btn-default" role="button" href="cadastroVeiculo">Cadastrar Novo Veículo</a>
 			<br/><br/>
@@ -128,7 +67,7 @@ $("#btnAluga").click(function() {
 						<td>${veiculo.ano}</td>
 						<td>${veiculo.kilometragem}</td>
 						<td>
-							<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#detalhesAluga" id="btnAluga">
+							<a class="btn btn-info btn-sm" role="button" href="detalhesAluga?chassi=${veiculo.chassi}">
 	  							Mais
 							</button>
 						</td>
@@ -156,7 +95,7 @@ $("#btnAluga").click(function() {
 						<td>${carona.destino}</td>
 						<td>${carona.data_saida}</td>
 						<td>
-							<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#detalhesCarona">
+							<a class="btn btn-info btn-sm" role="button" href="detalhesCarona?id=${carona.id}">
 	  							Mais
 							</button>
 						</td>

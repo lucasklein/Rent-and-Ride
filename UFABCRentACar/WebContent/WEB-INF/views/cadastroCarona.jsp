@@ -102,7 +102,7 @@ form {
 				  </div>
 				  <div class="form-group">
 				    <label for="marca">Data de Saida:</label>
-				    <input type="text" class="form-control" id="destino" name="destino" placeholder="dd/mm/aaaa hh:mm">
+				    <input type="text" class="form-control" id="data_saida" name="data_saida" placeholder="dd/mm/aaaa hh:mm">
 				  </div>
 				  <div class="form-group">
 				    <label for="cpf">CPF Motorista:</label>

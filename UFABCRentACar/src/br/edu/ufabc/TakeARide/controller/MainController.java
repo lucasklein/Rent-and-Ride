@@ -120,4 +120,24 @@ public class MainController {
 	public String sucesso(Model model){
 		return "sucesso";
 	}
+	
+	@RequestMapping("detalhesCarona")
+	public String detalhes(int id, Model model){
+		if(id > 0){
+			model.addAttribute("carona", caronaDAO.buscaPorId(id));
+			model.addAttribute("pessoa", caronaDAO.buscaPorId(id).getPessoa());
+			return "detalhesCarona";
+		}
+		return "redirect:listaVeiculos";
+	}
+	
+	@RequestMapping("detalhesAluga")
+	public String detalhes(String chassi, Model model){
+		if(chassi != null){
+			model.addAttribute("veiculo", veiculoDAO.buscaPorId(chassi));
+			model.addAttribute("pessoa", veiculoDAO.buscaPorId(chassi).getPessoa());
+			return "detalhesAluga";
+		}
+		return "redirect:listaVeiculos";
+	}
 }

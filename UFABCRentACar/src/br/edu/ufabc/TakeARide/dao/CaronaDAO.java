@@ -29,7 +29,7 @@ public class CaronaDAO {
 	}
 
 	// faz a busca de carona pelo ID
-	public Carona buscaPorId(Long id) {
+	public Carona buscaPorId(int id) {
 		return manager.find(Carona.class, id);
 	}
 
