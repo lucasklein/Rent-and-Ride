@@ -29,7 +29,7 @@ public class AluguelDAO {
 	}
 
 	// faz a busca de aluguel pelo ID
-	public Aluguel buscaPorId(Long id) {
+	public Aluguel buscaPorId(int id) {
 		return manager.find(Aluguel.class, id);
 	}
 

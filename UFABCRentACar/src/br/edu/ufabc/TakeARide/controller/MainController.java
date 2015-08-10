@@ -1,5 +1,7 @@
 package br.edu.ufabc.TakeARide.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -154,6 +156,23 @@ public class MainController {
 		return "redirect:listaVeiculos";
 	}
 	
+	@Transactional
+	@RequestMapping("removeAluguel")
+	public String removeAluguel(int id, Model model){
+		if(id > 0){
+			Aluguel aluguel = aluguelDAO.buscaPorId(id);
+			
+			Veiculo veiculo = veiculoDAO.buscaPorId(aluguel.getVeiculo().getChassi());
+			veiculo.setStatus(0);
+			
+			aluguelDAO.remove(aluguel);
+			veiculoDAO.altera(veiculo);
+			
+			return "redirect:meusDados";
+		}
+		return "redirect:meusDados";
+	}
+	
 	
 	@RequestMapping("listaVeiculos")
 	public String listaVeiculos(Model model) {
@@ -176,11 +195,20 @@ public class MainController {
 		model.addAttribute("pessoa", pessoaSessao);
 		model.addAttribute("veiculos", pessoaSessao.getVeiculos());
 		model.addAttribute("aluguels", pessoaSessao.getAlugueis());
-		model.addAttribute("aluguelsSolicitados", pessoaSessao.getAlugueisSolicitados());
 		model.addAttribute("caronas", pessoaSessao.getCaronas());
 		
-		System.out.println("Cedidos---> " + pessoaSessao.getAlugueis().size());
-		System.out.println("Solicitados---> " + pessoaSessao.getAlugueisSolicitados().size());
+		List<Aluguel> alugueisSolicitados = aluguelDAO.getLista();
+		System.out.println("Size->" + alugueisSolicitados.size());
+		for(int i=0;i < alugueisSolicitados.size();i++){
+			System.out.println("l1:" + alugueisSolicitados.get(i).getLocatario().getCpf() + " l2:" + pessoaSessao.getCpf());
+			System.out.println(alugueisSolicitados.get(i).getLocatario().getCpf().equals(pessoaSessao.getCpf()));
+			if(!alugueisSolicitados.get(i).getLocatario().getCpf().equals(pessoaSessao.getCpf())){
+				alugueisSolicitados.remove(i);	
+				System.out.println("Removi" + i);
+			}
+		}
+		
+		model.addAttribute("aluguelsSolicitados", alugueisSolicitados);
 		
 		return "meusDados";	
 	}

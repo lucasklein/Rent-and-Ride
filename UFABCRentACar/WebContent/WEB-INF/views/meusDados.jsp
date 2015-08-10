@@ -90,7 +90,7 @@ a {
 						<td>
 							<a class="btn btn-info btn-sm" role="button" href="removeVeiculo?chassi=${veiculo.chassi}">
 	  							Deletar
-							</button>
+							</a>
 						</td>
 					</tr>
 	
@@ -117,7 +117,7 @@ a {
 						<td>
 							<a class="btn btn-info btn-sm" role="button" href="removeCarona?id=${carona.id}">
 	  							Cancelar
-							</button>
+							</a>
 						</td>
 					</tr>
 					
@@ -133,12 +133,13 @@ a {
 					<td><b>Dono</b></td>
 					<td><b>Celular</b></td>
 					<td><b>Email</b></td>
-					<td><b>Data Inicio</b></td>
-					<td><b>Data Devolucao</b></td>
-					<td><b>Observacao</b></td>
-					<td><b>Locatario</b></td>
-					<td><b>Celular Locatario</b></td>
-					<td><b>Email Locatario</b></td>
+					<td><b>Data Início</b></td>
+					<td><b>Data Devolução</b></td>
+					<td><b>Locatário</b></td>
+					<td><b>Celular Locatário</b></td>
+					<td><b>Email Locatário</b></td>
+					<td><b>Observação</b></td>
+					<td><b></b></td>
 				</tr>
 				<c:forEach items="${aluguels}" var="aluguel">
 					<tr>
@@ -148,29 +149,35 @@ a {
 						<td>${aluguel.pessoa.email}</td>
 						<td>${aluguel.data_inicio}</td>
 						<td>${aluguel.data_devolucao}</td>
-						<td>${aluguel.observacao}</td>
 						<td>${aluguel.locatario.nome}</td>
 						<td>${aluguel.locatario.celular}</td>
 						<td>${aluguel.locatario.email}</td>
+						<td>${aluguel.observacao}</td>
+						<td>
+							<a class="btn btn-info btn-sm" role="button" href="removeAluguel?id=${aluguel.id}">
+	  							Cancelar Aluguel
+							</a>
+						</td>
 					</tr>
 					
 				</c:forEach>
 			</table>	
 	   </div>
 	   <div class="aluguelsSolicitados">
-	   <h2>Alugueis Solicitados</h2>
+	   <h2>Aluguéis Solicitados</h2>
 		<table  class="table table-striped">
 				<tr>
 					<td><b>Chassi</b></td>
 					<td><b>Dono</b></td>
 					<td><b>Celular</b></td>
 					<td><b>Email</b></td>
-					<td><b>Data Inicio</b></td>
-					<td><b>Data Devolucao</b></td>
-					<td><b>Observacao</b></td>
-					<td><b>Locatario</b></td>
-					<td><b>Celular Locatario</b></td>
-					<td><b>Email Locatario</b></td>
+					<td><b>Data Início</b></td>
+					<td><b>Data Devolução</b></td>
+					<td><b>Locatário</b></td>
+					<td><b>Celular Locatário</b></td>
+					<td><b>Email Locatário</b></td>
+					<td><b>Observação</b></td>
+					<td><b></b></td>
 				</tr>
 				<c:forEach items="${aluguelsSolicitados}" var="aluguelSolicitado">
 					<tr>
@@ -180,10 +187,15 @@ a {
 						<td>${aluguelSolicitado.pessoa.email}</td>
 						<td>${aluguelSolicitado.data_inicio}</td>
 						<td>${aluguelSolicitado.data_devolucao}</td>
-						<td>${aluguelSolicitado.observacao}</td>
 						<td>${aluguelSolicitado.locatario.nome}</td>
 						<td>${aluguelSolicitado.locatario.celular}</td>
 						<td>${aluguelSolicitado.locatario.email}</td>
+						<td>${aluguelSolicitado.observacao}</td>
+						<td>
+							<a class="btn btn-info btn-sm" role="button" href="removeAluguel?id=${aluguel.id}">
+	  							Cancelar Aluguel
+							</a>
+						</td>
 					</tr>
 					
 				</c:forEach>
