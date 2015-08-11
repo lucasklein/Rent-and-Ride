@@ -205,5 +205,9 @@ a {
 	   </div>
 	</div>
 	<a class="btn btn-danger btn-sm" href="/UFABCRentACar/listaVeiculos">Voltar</a>
+	<br><br>
+	<div style="bottom: 0; margin: 0; width: 100%" >
+		<jsp:include page="rodape.jsp" />
+	</div>
 </body>
 </html>
