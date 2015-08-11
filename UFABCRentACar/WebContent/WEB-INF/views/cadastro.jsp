@@ -162,34 +162,34 @@ form {
 	<jsp:include page="cabecalho.jsp" />
 
 	<div class="registerForm">
-		<form action="inserePessoa" method="post" >
+		<form action="inserePessoa" method="post" data-toggle="validator">
 			
 			<h2>Dados Pessoais</h2>
 			<hr size="2px" color="gray" width="800px" align="left" />
 			
 				  <div class="form-group">
 				    <label for="nome">Nome:</label>
-				    <input type="text" class="form-control" id="nome" name="nome">
+				    <input type="text" class="form-control" id="nome" name="nome" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="cpf">CPF:</label>
-				    <input type="text" class="form-control" id="cpf" name="cpf" onKeyUp="javascript:numbersOnly(this);">
+				    <input type="text" class="form-control" id="cpf" name="cpf" onKeyUp="javascript:numbersOnly(this);" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="telefone">Telefone:</label>
-				    <input type="text" class="form-control" id="telefone" name="telefone">
+				    <input type="text" class="form-control" id="telefone" name="telefone" onKeyUp="javascript:numbersOnly(this);" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="celular">Celular:</label>
-				    <input type="text" class="form-control" id="celular" name="celular">
+				    <input type="text" class="form-control" id="celular" name="celular" onKeyUp="javascript:numbersOnly(this);" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="email">Email:</label>
-				    <input type="text" class="form-control" id="email" name="email">
+				    <input type="text" class="form-control" id="email" name="email" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="ra">RA:</label>
-				    <input type="text" class="form-control" id="ra" name="ra">
+				    <input type="text" class="form-control" id="ra" name="ra" required>
 				  </div>
 			
 			<h2>Dados de Moradia</h2>
@@ -197,11 +197,11 @@ form {
 			
 				  <div class="form-group">
 				    <label for="logradouro">Logradouro:</label>
-				    <input type="text" class="form-control" id="logradouro" name="logradouro">
+				    <input type="text" class="form-control" id="logradouro" name="logradouro" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="logradouro">Número:</label>
-				    <input type="text" class="form-control" id="numero" name="numero">
+				    <input type="text" class="form-control" id="numero" name="numero" onKeyUp="javascript:numbersOnly(this);" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="logradouro">Complemento:</label>
@@ -209,18 +209,18 @@ form {
 				  </div>
 				  <div class="form-group">
 				    <label for="logradouro">Cidade:</label>
-				    <input type="text" class="form-control" id="cidade" name="cidade">
+				    <input type="text" class="form-control" id="cidade" name="cidade" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="logradouro">Estado:</label>
-				    <input type="text" class="form-control" id="estado" name="estado">
+				    <input type="text" class="form-control" id="estado" name="estado" required>
 				  </div>
 			
 			<h2>Dados de Acesso</h2>
 			<hr size="2px" color="gray" width="800px" align="left" />
 				  <div class="form-group">
 				    <label for="senha">Senha:</label>
-				    <input type="password" class="form-control" id="senha" name="senha">
+				    <input type="password" class="form-control" id="senha" name="senha" required>
 				  </div>
 
 			<br /> 

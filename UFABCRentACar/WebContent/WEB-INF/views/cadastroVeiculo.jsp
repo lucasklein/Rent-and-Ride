@@ -128,24 +128,24 @@ form {
 			<hr size="2px" color="gray" width="800px" align="center" />
 			
 				  <div class="form-group">
-				    <label for="nome">Nome:</label>
-				    <input type="text" class="form-control" id="nome" name="nome">
+				    <label for="nome">Modelo:</label>
+				    <input type="text" class="form-control" id="nome" name="nome" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="marca">Marca:</label>
-				    <input type="text" class="form-control" id="marca" name="marca">
+				    <input type="text" class="form-control" id="marca" name="marca" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="ano">Ano:</label>
-				    <input type="text" class="form-control" id="ano" name="ano" onKeyUp="javascript:numbersOnly(this);">
+				    <input type="text" class="form-control" id="ano" name="ano" onKeyUp="javascript:numbersOnly(this);" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="kilometragem">Kilometragem:</label>
-				    <input type="text" class="form-control" id="kilometragem" name="kilometragem" onKeyUp="javascript:numbersOnly(this);">
+				    <input type="text" class="form-control" id="kilometragem" name="kilometragem" onKeyUp="javascript:numbersOnly(this);" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="chassi">Chassi:</label>
-				    <input type="text" class="form-control" id="chassi" name="chassi">
+				    <input type="text" class="form-control" id="chassi" name="chassi" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="cpf">CPF Dono:</label>

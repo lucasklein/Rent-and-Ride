@@ -98,19 +98,19 @@ form {
 			<hr size="2px" color="gray" width="800px" align="center" />
 				  <div class="form-group">
 				    <label for="qtd_vagas">Quantidade de Vagas:</label>
-				    <input type="text" class="form-control" id="qtd_vagas" name="qtd_vagas" onKeyUp="javascript:numbersOnly(this);">
+				    <input type="text" class="form-control" id="qtd_vagas" name="qtd_vagas" onKeyUp="javascript:numbersOnly(this);" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="partida">Endereço de Origem:</label>
-				    <input type="text" class="form-control" id="partida" name="partida">
+				    <input type="text" class="form-control" id="partida" name="partida" placeholder="Endereço, Nº, Cidade, Estado" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="destino">Endereço de Destino:</label>
-				    <input type="text" class="form-control" id="destino" name="destino">
+				    <input type="text" class="form-control" id="destino" name="destino" placeholder="Endereço, Nº, Cidade, Estado" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="data_saida">Data de Saida:</label>
-				    <input type="text" class="form-control" id="data_saida" name="data_saida" placeholder="mm/dd/aaaa hh:mm">
+				    <input type="text" class="form-control" id="data_saida" name="data_saida" placeholder="mm/dd/aaaa hh:mm" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="cpf">CPF Motorista:</label>
