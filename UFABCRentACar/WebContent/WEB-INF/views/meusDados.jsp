@@ -192,7 +192,7 @@ a {
 						<td>${aluguelSolicitado.locatario.email}</td>
 						<td>${aluguelSolicitado.observacao}</td>
 						<td>
-							<a class="btn btn-info btn-sm" role="button" href="removeAluguel?id=${aluguel.id}">
+							<a class="btn btn-info btn-sm" role="button" href="removeAluguel?id=${aluguelSolicitado.id}">
 	  							Cancelar Aluguel
 							</a>
 						</td>

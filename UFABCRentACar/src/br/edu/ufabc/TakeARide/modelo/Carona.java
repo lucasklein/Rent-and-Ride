@@ -27,6 +27,9 @@ public class Carona {
 	@Column(nullable=false)
 	private int qtd_vagas;
 	
+	@Column(nullable=false)
+	private int qtd_vagas_disponiveis;
+	
 	@NotEmpty(message="Partida não pode ser vazio!")
 	@Column(name="local_partida",nullable=false)
 	private String partida;
@@ -89,6 +92,14 @@ public class Carona {
 
 	public void setPartida(String partida) {
 		this.partida = partida;
+	}
+
+	public int getQtd_vagas_disponiveis() {
+		return qtd_vagas_disponiveis;
+	}
+
+	public void setQtd_vagas_disponiveis(int qtd_vagas_disponiveis) {
+		this.qtd_vagas_disponiveis = qtd_vagas_disponiveis;
 	}
 
 }
