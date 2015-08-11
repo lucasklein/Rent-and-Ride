@@ -116,6 +116,7 @@ public class MainController {
 			return "cadastroCarona";
 		}
 		carona.setPessoa(pessoaSessao);
+		carona.setQtd_vagas_disponiveis(carona.getQtd_vagas());
 		caronaDAO.insere(carona); 
 		System.out.println("----> Nova carona cadastrado!");
 		return "redirect:listaVeiculos";
