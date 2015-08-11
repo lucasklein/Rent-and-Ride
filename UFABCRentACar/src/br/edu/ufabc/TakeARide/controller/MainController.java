@@ -75,7 +75,7 @@ public class MainController {
 		pessoa.setSenha(Criptografia.encripta(pessoa.getSenha()));
 		pessoaDAO.insere(pessoa); 
 		System.out.println("----> Nova pessoa cadastrada!");
-		return "redirect:listaVeiculos";
+		return "redirect:/";
 	}
 	
 	@RequestMapping("listaPessoas")
@@ -135,6 +135,19 @@ public class MainController {
 	}
 	
 	@Transactional
+	@RequestMapping("pedirCarona")
+	public String altera(int id, Model model){
+		if(id > 0){
+			Carona carona = caronaDAO.buscaPorId(id);
+			carona.setQtd_vagas_disponiveis(carona.getQtd_vagas_disponiveis() - 1);
+			caronaDAO.altera(carona);
+
+			return "redirect:listaVeiculos";
+		}
+		return "redirect:detalhesCarona";
+	}
+	
+	@Transactional
 	@RequestMapping("insereAluguel")
 	public String insere(@Valid AluguelSerializer serializer, BindingResult result) {
 		if (result.hasErrors()) {
@@ -178,7 +191,7 @@ public class MainController {
 	@RequestMapping("listaVeiculos")
 	public String listaVeiculos(Model model) {
 		model.addAttribute("veiculos", veiculoDAO.getListaDisponiveis());
-		model.addAttribute("caronas", caronaDAO.getLista());
+		model.addAttribute("caronas", caronaDAO.getListaDisponiveis());
 		return "firstPage";
 	}
 	

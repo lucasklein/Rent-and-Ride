@@ -70,7 +70,7 @@ $("#btnAluga").click(function() {
 						<td>
 							<a class="btn btn-info btn-sm" role="button" href="detalhesAluga?chassi=${veiculo.chassi}">
 	  							Mais
-							</button>
+							</a>
 						</td>
 					</tr>
 	
@@ -83,22 +83,24 @@ $("#btnAluga").click(function() {
 			<br/><br/>
 			<table  class="table table-striped">
 				<tr>
-					<td id="vagas"><b>Vagas</b></td>
+					<td><b>Vagas Disponíveis</b></td>
 					<td><b>Origem</b></td>
 					<td><b>Destino</b></td>
 					<td><b>Data</b></td>
+					<td id="vagas"><b>Vagas Totais</b></td>
 					<td><b>Detalhes</b></td>
 				</tr>
 				<c:forEach items="${caronas}" var="carona">
 					<tr>
-						<td>${carona.qtd_vagas}</td>
+						<td>${carona.qtd_vagas_disponiveis}</td>
 						<td>${carona.partida}</td>
 						<td>${carona.destino}</td>
 						<td>${carona.data_saida}</td>
+						<td>${carona.qtd_vagas}</td>
 						<td>
 							<a class="btn btn-info btn-sm" role="button" href="detalhesCarona?id=${carona.id}">
 	  							Mais
-							</button>
+							</a>
 						</td>
 					</tr>
 					

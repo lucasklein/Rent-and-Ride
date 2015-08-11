@@ -117,7 +117,7 @@ label{
 	<div class=conteudo>
 		
 		<div class="caronas">	
-		<form action="#" method="post" >
+		<form action="pedirCarona" method="post" >
 			<h2>Dados do Condutor</h2>
 			<hr size="2px" color="gray" width="100%" align="left" />
 			
@@ -137,20 +137,23 @@ label{
 			<h2>Dados da Carona</h2>
 			<hr size="2px" color="gray" width="100%" align="left" />
 				 <div class="form-group">
-				    <label for="vagas">Vagas no veiculo:</label> <label for="vagas">${carona.getQtd_vagas()}</label>
+				    <label for="vagas">Vagas Totais:</label> <label for="vagas">${carona.qtd_vagas}</label>
 				 </div>
 				 <div class="form-group">
-				    <label for="origem">Origem:</label> <label for="origem">${carona.getPartida()}</label>
+				    <label for="vagas_disponiveis">Vagas Disponíveis:</label> <label for="vagas_disponiveis">${carona.qtd_vagas_disponiveis}</label>
+				 </div>
+				 <div class="form-group">
+				    <label for="origem">Origem:</label> <label for="origem">${carona.partida}</label>
 				 </div> 
 				 <div class="form-group">
-				    <label for="destino">Destino:</label> <label for="destino">${carona.getDestino()}</label>
+				    <label for="destino">Destino:</label> <label for="destino">${carona.destino}</label>
 				 </div> 
 				 <div class="form-group">
-				    <label for="vagas">Data:</label> <label for="vagas">${carona.getData_saida()}</label>
+				    <label for="vagas">Data:</label> <label for="vagas">${carona.data_saida}</label>
 				 </div>  
 				<br />
-
-				<button type="submit" class="btn btn-success btn-lg" id="envia">Quero essa carona!</button>
+				<a class="btn btn-success btn-lg" role="button" href="pedirCarona?id=${carona.id}">Quero essa carona!</a>
+				<!-- <button type="submit" class="btn btn-success btn-lg" id="envia">Quero essa carona!</button> -->
 				<a href="listaVeiculos" class="btn btn-danger btn-lg">Voltar</a>
 				<br/><br/><br/>
 		</div>

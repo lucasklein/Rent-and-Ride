@@ -102,10 +102,11 @@ a {
 		<h2>Caronas</h2>
 		<table  class="table table-striped">
 				<tr>
-					<td id="vagas"><b>Vagas</b></td>
+					<td id="vagas"><b>Vagas Totais</b></td>
 					<td><b>Origem</b></td>
 					<td><b>Destino</b></td>
 					<td><b>Data</b></td>
+					<td><b>Vagas Disponíveis</b></td>
 					<td><b>Cancelar Carona</b></td>
 				</tr>
 				<c:forEach items="${caronas}" var="carona">
@@ -114,6 +115,7 @@ a {
 						<td>${carona.partida}</td>
 						<td>${carona.destino}</td>
 						<td>${carona.data_saida}</td>
+						<td>${carona.qtd_vagas_disponiveis}</td>
 						<td>
 							<a class="btn btn-info btn-sm" role="button" href="removeCarona?id=${carona.id}">
 	  							Cancelar

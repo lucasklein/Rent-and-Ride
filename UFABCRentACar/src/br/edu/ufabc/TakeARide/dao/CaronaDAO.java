@@ -40,5 +40,12 @@ public class CaronaDAO {
 				.getResultList();
 		return caronas;
 	}
+	
+	public List<Carona> getListaDisponiveis() {
+		@SuppressWarnings("unchecked")
+		List<Carona> caronas = manager.createQuery("select a from Carona a where a.qtd_vagas_disponiveis > :qtd").setParameter("qtd", 0)
+				.getResultList();
+		return caronas;
+	}
 
 }
