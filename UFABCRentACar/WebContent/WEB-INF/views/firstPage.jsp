@@ -80,6 +80,7 @@ $("#btnAluga").click(function() {
 		
 		<div class="caronas">
 			<a class="btn btn-default" role="button" href="cadastroCarona">Cadastrar Nova Carona</a>
+			<a style="float: right;" class="btn btn-danger" role="button" href="logout">Logout</a>
 			<br/><br/>
 			<table  class="table table-striped">
 				<tr>

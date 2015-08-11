@@ -204,6 +204,6 @@ a {
 			</table>	
 	   </div>
 	</div>
-	<a href="/UFABCRentACar/listaVeiculos">Voltar</a>
+	<a class="btn btn-danger btn-sm" href="/UFABCRentACar/listaVeiculos">Voltar</a>
 </body>
 </html>

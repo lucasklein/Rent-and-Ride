@@ -246,4 +246,10 @@ public class MainController {
 		}
 		return "redirect:listaVeiculos";
 	}
+	
+	@RequestMapping("logout")
+	public String logout(Model model){
+		pessoaSessao = null;
+		return "redirect:/";
+	}
 }
