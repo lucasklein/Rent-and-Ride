@@ -41,7 +41,7 @@ public class PessoaDAO {
 	// devolve uma lista com todos pessoas
 	public List<Pessoa> getLista() {
 		@SuppressWarnings("unchecked")
-		List<Pessoa> pessoas = manager.createQuery("select a from Pessoa a")
+		List<Pessoa> pessoas = manager.createQuery("select distinct a from Pessoa a")
 				.getResultList();
 		return pessoas;
 	}

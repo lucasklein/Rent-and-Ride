@@ -36,7 +36,7 @@ public class AluguelDAO {
 	// devolve uma lista com todos aluguels
 	public List<Aluguel> getLista() {
 		@SuppressWarnings("unchecked")
-		List<Aluguel> aluguels = manager.createQuery("select a from Aluguel a")
+		List<Aluguel> aluguels = manager.createQuery("select distinct a from Aluguel a")
 				.getResultList();
 		return aluguels;
 	}

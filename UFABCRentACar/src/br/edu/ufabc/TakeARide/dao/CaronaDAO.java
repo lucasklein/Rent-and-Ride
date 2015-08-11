@@ -40,7 +40,7 @@ public class CaronaDAO {
 	// devolve uma lista com todos caronas
 	public List<Carona> getLista() {
 		@SuppressWarnings("unchecked")
-		List<Carona> caronas = manager.createQuery("select a from Carona a")
+		List<Carona> caronas = manager.createQuery("select distinct a from Carona a")
 				.getResultList();
 		return caronas;
 	}
@@ -49,7 +49,7 @@ public class CaronaDAO {
 		Date date = new Date();
 		
 		@SuppressWarnings("unchecked")
-		List<Carona> caronas = manager.createQuery("select a from Carona a where a.qtd_vagas_disponiveis > :qtd AND a.data_saida > :data").setParameter("qtd", 0).setParameter("data", date)
+		List<Carona> caronas = manager.createQuery("select distinct a from Carona a where a.qtd_vagas_disponiveis > :qtd AND a.data_saida > :data").setParameter("qtd", 0).setParameter("data", date)
 				.getResultList();
 		return caronas;
 	}

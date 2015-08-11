@@ -207,21 +207,35 @@ public class MainController {
 		pessoaSessao = pessoaDAO.buscaPorId(pessoaSessao.getCpf());
 		
 		model.addAttribute("pessoa", pessoaSessao);
-		model.addAttribute("veiculos", pessoaSessao.getVeiculos());
-		model.addAttribute("aluguels", pessoaSessao.getAlugueis());
-		model.addAttribute("caronas", pessoaSessao.getCaronas());
-		
+			
 		List<Aluguel> alugueisSolicitados = aluguelDAO.getLista();
-		System.out.println("Size->" + alugueisSolicitados.size());
 		for(int i=0;i < alugueisSolicitados.size();i++){
-			System.out.println("l1:" + alugueisSolicitados.get(i).getLocatario().getCpf() + " l2:" + pessoaSessao.getCpf());
-			System.out.println(alugueisSolicitados.get(i).getLocatario().getCpf().equals(pessoaSessao.getCpf()));
 			if(!alugueisSolicitados.get(i).getLocatario().getCpf().equals(pessoaSessao.getCpf())){
 				alugueisSolicitados.remove(i);	
-				System.out.println("Removi" + i);
 			}
 		}
-		
+		List<Aluguel> alugueis = aluguelDAO.getLista();
+		for(int i=0;i < alugueis.size();i++){
+			if(!alugueis.get(i).getPessoa().getCpf().equals(pessoaSessao.getCpf())){
+				alugueis.remove(i);	
+			}
+		}
+		List<Carona> caronas = caronaDAO.getLista();
+		for(int i=0;i < caronas.size();i++){
+			if(!caronas.get(i).getPessoa().getCpf().equals(pessoaSessao.getCpf())){
+				caronas.remove(i);	
+			}
+		}
+		List<Veiculo> veiculos = veiculoDAO.getLista();
+		for(int i=0;i < veiculos.size();i++){
+			if(!veiculos.get(i).getPessoa().getCpf().equals(pessoaSessao.getCpf())){
+				veiculos.remove(i);	
+			}
+		}
+
+		model.addAttribute("caronas", caronas);
+		model.addAttribute("veiculos", veiculos);
+		model.addAttribute("aluguels", alugueis);
 		model.addAttribute("aluguelsSolicitados", alugueisSolicitados);
 		
 		return "meusDados";	

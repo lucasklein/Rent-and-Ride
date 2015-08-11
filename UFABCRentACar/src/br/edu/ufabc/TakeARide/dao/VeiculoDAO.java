@@ -36,14 +36,14 @@ public class VeiculoDAO {
 	// devolve uma lista com todos veiculos
 	public List<Veiculo> getLista() {
 		@SuppressWarnings("unchecked")
-		List<Veiculo> veiculos = manager.createQuery("select a from Veiculo a")
+		List<Veiculo> veiculos = manager.createQuery("select distinct a from Veiculo a")
 				.getResultList();
 		return veiculos;
 	}
 	
 	public List<Veiculo> getListaDisponiveis() {
 		@SuppressWarnings("unchecked")
-		List<Veiculo> veiculos = manager.createQuery("select a from Veiculo a where status = :status").setParameter("status", 0).getResultList();
+		List<Veiculo> veiculos = manager.createQuery("select distinct a from Veiculo a where status = :status").setParameter("status", 0).getResultList();
 		return veiculos;
 	}
 
