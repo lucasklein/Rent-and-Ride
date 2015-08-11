@@ -1,9 +1,13 @@
 package br.edu.ufabc.TakeARide.dao;
 
+import java.util.Date;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Repository;
+
 import br.edu.ufabc.TakeARide.modelo.Carona;
 
 @Repository
@@ -42,8 +46,10 @@ public class CaronaDAO {
 	}
 	
 	public List<Carona> getListaDisponiveis() {
+		Date date = new Date();
+		
 		@SuppressWarnings("unchecked")
-		List<Carona> caronas = manager.createQuery("select a from Carona a where a.qtd_vagas_disponiveis > :qtd").setParameter("qtd", 0)
+		List<Carona> caronas = manager.createQuery("select a from Carona a where a.qtd_vagas_disponiveis > :qtd AND a.data_saida > :data").setParameter("qtd", 0).setParameter("data", date)
 				.getResultList();
 		return caronas;
 	}
