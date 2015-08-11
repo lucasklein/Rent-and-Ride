@@ -162,7 +162,7 @@ form {
 			<br/><br/>
 			
 		</form><br/>
-		<a href="/UFABCRentACar/listaVeiculos">Voltar</a>
+		<a class="btn btn-danger btn-sm" href="/UFABCRentACar/listaVeiculos">Voltar</a>
 	</div>
 	<jsp:include page="rodape.jsp" />
 </body>
