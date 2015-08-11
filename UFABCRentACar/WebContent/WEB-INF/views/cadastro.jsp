@@ -61,11 +61,13 @@ form {
 			//Verifica CPF
 			if(!TestaCPF(cpf)){
 				alert("CPF Inválido!");
+				return false;
 			}
 			
 			//Verifica ao menos um telefone registrado
-			if(telefone == "" || celular == ""){
-				alert("Insira ao menos um telefone válido!");
+			if(telefone == "" || celular == "" || telefone.length < 10 || celular.length < 11){
+				alert("Insira ao menos um telefone válido com DDD!");
+				return false;
 			}
 			
 			//Verifica campo email
@@ -228,7 +230,7 @@ form {
 			
 			<input type="hidden" id="opcao" name="opcao" value="usuario" />
 		</form><br/>
-		<a href="/UFABCRentACar/listaVeiculos">Voltar</a>
+		<a class="btn btn-danger btn-sm" href="logout">Voltar</a>
 	</div>
 	<jsp:include page="rodape.jsp" />
 </body>

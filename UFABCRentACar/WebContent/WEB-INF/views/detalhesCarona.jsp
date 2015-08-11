@@ -163,7 +163,6 @@ label{
 			<div id="map-canvas"></div>
 		</div>
 	</div>
-	<a href="/UFABCRentACar/listaVeiculos">Voltar</a>
 	<div style="bottom: 0; margin: 0; width: 100%" >
 		<jsp:include page="rodape.jsp" />
 	</div>

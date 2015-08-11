@@ -27,11 +27,11 @@ public class Pessoa {
 	private String cpf; 
 	
 	@NotEmpty(message="Telefone não pode ser vazio!") 
-	@Column(length = 9)
+	@Column(length = 10)
 	private String telefone; 
 	
 	@NotEmpty(message="Celular não pode ser vazio!") 
-	@Column(length = 9)
+	@Column(length = 11)
 	private String celular; 
 	
 	@NotEmpty(message="Email não pode ser vazio!") 
