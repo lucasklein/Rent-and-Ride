@@ -103,10 +103,6 @@ label{
 		</div>
 	<a class="btn btn-danger btn-sm" href="/UFABCRentACar/listaVeiculos">Voltar</a>
 	</div>
-<<<<<<< HEAD
-=======
-	<a class="btn btn-danger btn-sm" href="/UFABCRentACar/listaVeiculos">Voltar</a>
->>>>>>> origin/master
 	<div style="bottom: 0; margin: 0; margin-top: 10px; width: 100%" >
 		<jsp:include page="rodape.jsp" />
 	</div>
